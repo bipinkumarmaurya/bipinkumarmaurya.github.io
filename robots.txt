@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bipinkumarmaurya.github.io/sitemap.xml
+Sitemap: https://bipinkumarmaurya.github.io/sitemap.txt
