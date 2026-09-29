@@ -711,7 +711,7 @@
       margin-bottom:20px;
       padding:7px 10px;
       border:1px solid var(--line);
-      color:var(--gold2);
+      color:#8f6c35;
       font-size:9px;
       font-weight:700;
       letter-spacing:1.5px;
@@ -745,7 +745,7 @@
 
     .article-card a{
       margin-top:22px;
-      color:var(--gold2);
+      color:#8f6c35;
       font-size:12px;
       font-weight:700;
     }
@@ -785,10 +785,88 @@
       font-size:25px;
     }
 
+    .library-toggle{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:24px 22px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:
+        radial-gradient(circle at 88% 18%,rgba(200,169,107,.13),transparent 28%),
+        linear-gradient(135deg,#1d2b39,#15212c);
+      color:var(--cream);
+      text-align:left;
+      box-shadow:var(--shadow);
+      transition:.3s ease;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    .library-toggle:hover{
+      transform:translateY(-3px);
+      border-color:rgba(200,169,107,.52);
+    }
+
+    .library-toggle-content small{
+      display:block;
+      color:var(--gold);
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:2px;
+      margin-bottom:7px;
+    }
+
+    .library-toggle-content strong{
+      display:block;
+      font-family:"Cormorant Garamond",serif;
+      font-size:31px;
+      line-height:1.05;
+      font-weight:600;
+    }
+
+    .library-toggle-content p{
+      margin-top:8px;
+      color:#a9a49b;
+      font-size:12px;
+      line-height:1.65;
+    }
+
+    .library-toggle-icon{
+      flex:0 0 44px;
+      width:44px;
+      height:44px;
+      display:grid;
+      place-items:center;
+      border:1px solid var(--line);
+      border-radius:50%;
+      color:var(--gold2);
+      font-size:25px;
+      transition:transform .3s ease,background .3s ease;
+    }
+
+    .library-toggle[aria-expanded="true"] .library-toggle-icon{
+      transform:rotate(45deg);
+      background:rgba(200,169,107,.08);
+    }
+
     .bare-grid{
       display:grid;
       grid-template-columns:1fr;
       gap:10px;
+      max-height:0;
+      overflow:hidden;
+      opacity:0;
+      transform:translateY(-8px);
+      transition:max-height .55s ease,opacity .35s ease,transform .35s ease,margin-top .35s ease;
+    }
+
+    .bare-grid.library-open{
+      max-height:1200px;
+      margin-top:14px;
+      opacity:1;
+      transform:none;
     }
 
     .bare-card{
@@ -1663,7 +1741,16 @@
             </div>
           </div>
 
-          <div class="bare-grid">
+          <button type="button" class="library-toggle" id="libraryToggle" aria-expanded="false" aria-controls="libraryCards" onclick="toggleLegalLibrary()">
+            <div class="library-toggle-content">
+              <small>EXPLORE THE LIBRARY</small>
+              <strong>Browse Legal Resources</strong>
+              <p>Criminal, Constitutional, Commercial and Miscellaneous legal resources.</p>
+            </div>
+            <span class="library-toggle-icon" aria-hidden="true">+</span>
+          </button>
+
+          <div class="bare-grid" id="libraryCards" aria-hidden="true">
 
             <a href="criminal-laws.html" class="bare-card">
               <div>
@@ -1680,7 +1767,7 @@
             <a href="constitutional-laws.html" class="bare-card">
               <div>
                 <div class="bare-index">02 · CONSTITUTIONAL</div>
-                <h3>Constitution & Constitutional Laws</h3>
+                <h3>Constitution &amp; Constitutional Laws</h3>
                 <p>Resources relating to the Constitution and constitutional law.</p>
               </div>
               <div class="bare-link">
@@ -1692,7 +1779,7 @@
             <a href="commerce-corporate-laws.html" class="bare-card">
               <div>
                 <div class="bare-index">03 · COMMERCIAL</div>
-                <h3>Commerce & Corporate Laws</h3>
+                <h3>Commerce &amp; Corporate Laws</h3>
                 <p>Resources relating to commercial and corporate law.</p>
               </div>
               <div class="bare-link">
@@ -1954,6 +2041,16 @@
         closePracticeExplorer();
       }
     });
+
+    function toggleLegalLibrary(){
+      const toggle = document.getElementById("libraryToggle");
+      const cards = document.getElementById("libraryCards");
+      const isOpen = toggle.getAttribute("aria-expanded") === "true";
+
+      toggle.setAttribute("aria-expanded", isOpen ? "false" : "true");
+      cards.setAttribute("aria-hidden", isOpen ? "true" : "false");
+      cards.classList.toggle("library-open", !isOpen);
+    }
 
     function toggleFAQ(button){
       const item = button.parentElement;
