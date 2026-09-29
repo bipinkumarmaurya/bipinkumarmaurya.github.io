@@ -216,10 +216,6 @@
       display:flex;
     }
 
-    body.menu-open{
-      overflow:hidden;
-    }
-
     .nav-links a{
       padding:13px 0;
       color:#d5cec2;
@@ -293,22 +289,21 @@
     }
 
     .hero-inner{
-  width:100%;
-  max-width:1240px;
-  margin:auto;
-  padding:42px 18px 30px;
-  position:relative;
-  z-index:2;
-  display:grid;
-  gap:32px;
-  align-items:center;
-}
+      width:100%;
+      max-width:1240px;
+      margin:auto;
+      padding:42px 18px 30px;
+      position:relative;
+      z-index:2;
+      display:grid;
+      gap:32px;
+      align-items:center;
+    }
 
     .hero-content{
       max-width:620px;
     }
 
-    .hero-kicker,
     .hero h1,
     .hero-subtitle,
     .hero-location,
@@ -319,26 +314,17 @@
       animation:heroReveal .75s ease forwards;
     }
 
-    .hero-kicker{animation-delay:.12s}
-    .hero h1{animation-delay:.22s}
-    .hero-subtitle{animation-delay:.32s}
-    .hero-location{animation-delay:.42s}
-    .hero-actions{animation-delay:.52s}
-    .hero-note{animation-delay:.62s}
+    .hero h1{animation-delay:.12s}
+    .hero-subtitle{animation-delay:.22s}
+    .hero-location{animation-delay:.32s}
+    .hero-actions{animation-delay:.42s}
+    .hero-note{animation-delay:.52s}
 
     @keyframes heroReveal{
       to{
         opacity:1;
         transform:none;
       }
-    }
-
-    .hero-kicker{
-      color:var(--gold2);
-      font-size:10px;
-      letter-spacing:2.8px;
-      font-weight:700;
-      margin-bottom:19px;
     }
 
     .hero h1{
@@ -365,15 +351,6 @@
       color:#888177;
       font-size:11px;
       letter-spacing:1.1px;
-    }
-
-    .hero-service-line{
-      margin-top:10px;
-      color:var(--gold2);
-      font-size:11px;
-      font-weight:700;
-      letter-spacing:1.7px;
-      text-transform:uppercase;
     }
 
     .hero-actions{
@@ -538,8 +515,7 @@
     #articles,
     #bare-acts,
     #faq,
-    #contact,
-    #privacy {
+    #contact {
       scroll-margin-top: 90px;
     }
 
@@ -939,67 +915,6 @@
       margin-right:7px;
     }
 
-    .contact-actions{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:9px;
-      margin-top:22px;
-    }
-
-    .contact-action{
-      min-height:48px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:11px 15px;
-      border:1px solid var(--line);
-      border-radius:8px;
-      color:var(--gold2);
-      background:rgba(201,169,110,.04);
-      font-size:12px;
-      font-weight:700;
-      transition:.25s ease;
-    }
-
-    .contact-action:hover{
-      transform:translateY(-2px);
-      border-color:var(--gold2);
-      background:rgba(201,169,110,.10);
-    }
-
-    .contact-action.whatsapp{
-      border-color:rgba(37,211,102,.42);
-      color:#8ef0b1;
-    }
-
-    .privacy-note{
-      margin-top:14px;
-      color:#716b63;
-      font-size:10px;
-      line-height:1.7;
-    }
-
-    .privacy-note a{
-      color:var(--gold2);
-    }
-
-    .resource-categories{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin:0 0 24px;
-    }
-
-    .resource-category{
-      padding:7px 11px;
-      border:1px solid var(--softline);
-      border-radius:999px;
-      color:#aaa298;
-      background:rgba(255,255,255,.018);
-      font-size:10px;
-      letter-spacing:.4px;
-    }
-
     .enquiry-form{
       display:grid;
       gap:12px;
@@ -1368,10 +1283,6 @@
         grid-template-columns:.85fr 1.15fr;
       }
 
-      .contact-actions{
-        grid-template-columns:repeat(3,1fr);
-      }
-
       .footer-grid{
         grid-template-columns:1fr auto;
         align-items:start;
@@ -1421,9 +1332,8 @@
 
       .hero-inner{
         grid-template-columns:1.1fr 0.9fr;
-        gap:60px;
-        padding-left:6%;
-        padding-right:6%;
+        gap:48px;
+        padding:28px 6% 24px;
       }
 
       .hero{
@@ -1440,8 +1350,8 @@
       }
 
       .hero-photo{
-        width:380px;
-        height:380px;
+        width:360px;
+        height:360px;
       }
 
       .section,
@@ -1598,8 +1508,7 @@
 
         <div class="hero-content">
 
-          
-        <h1>Bipin Kumar <span>Maurya</span></h1>
+          <h1>Bipin Kumar <span>Maurya</span></h1>
 
           <p class="hero-subtitle">
             Clear and practical legal guidance on Criminal, Civil, Family, Property, Consumer and Labour matters in Gorakhpur.
@@ -1607,10 +1516,6 @@
 
           <div class="hero-location">
             GORAKHPUR · UTTAR PRADESH · INDIA
-          </div>
-
-          <div class="hero-service-line">
-            Legal Information · Consultation · Assistance
           </div>
 
           <div class="hero-actions">
@@ -1625,7 +1530,7 @@
         </div>
 
         <div class="hero-photo-wrap">
-          <img src="advocate.png" alt="Bipin Kumar Maurya - Legal Consultant in Gorakhpur" class="hero-photo" width="380" height="380" fetchpriority="high" decoding="async">
+          <img src="advocate.png" alt="Bipin Kumar Maurya - Legal Consultant in Gorakhpur" class="hero-photo">
         </div>
 
       </div>
@@ -1695,7 +1600,7 @@
             <p>Useful and informative articles on important topics relating to law, legal awareness and Indian law.</p>
           </div>
 
-          <div id="home-articles-list" class="articles-grid" aria-live="polite" aria-busy="true">
+          <div id="home-articles-list" class="articles-grid" aria-live="polite">
             <div class="articles-loading">Legal Articles are loading...</div>
           </div>
 
@@ -1721,17 +1626,6 @@
               <h2>Legal Resources</h2>
               <p>Bare Acts and important legal resources relating to Indian law, provided for general information and awareness.</p>
             </div>
-          </div>
-
-          <div class="resource-categories" aria-label="Legal resource categories">
-            <span class="resource-category">Criminal</span>
-            <span class="resource-category">Constitutional</span>
-            <span class="resource-category">Civil</span>
-            <span class="resource-category">Family</span>
-            <span class="resource-category">Property</span>
-            <span class="resource-category">Consumer</span>
-            <span class="resource-category">Labour</span>
-            <span class="resource-category">Commercial</span>
           </div>
 
           <div class="bare-grid">
@@ -1885,45 +1779,19 @@
                 <div><strong>Email</strong> <a href="mailto:bipinforoffice247@gmail.com">bipinforoffice247@gmail.com</a></div>
                 <div><strong>Location</strong> Gorakhpur, Uttar Pradesh</div>
               </div>
-
-              <div class="contact-actions" aria-label="Direct contact options">
-                <a class="contact-action" href="tel:7080884964">📞 Call Now</a>
-                <a class="contact-action whatsapp" href="https://wa.me/917080884964" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
-                <a class="contact-action" href="mailto:bipinforoffice247@gmail.com">✉ Email</a>
-              </div>
             </div>
 
             <form class="enquiry-form" onsubmit="sendEnquiryToWhatsApp(); return false;">
               <input type="text" id="clientName" placeholder="Your Name" aria-label="Your Name" autocomplete="name" required>
-              <input type="tel" id="clientPhone" placeholder="Mobile Number" aria-label="Mobile Number" autocomplete="tel" inputmode="tel" pattern="[0-9+\-\s()]{10,15}" maxlength="15" required>
+              <input type="tel" id="clientPhone" placeholder="Mobile Number" aria-label="Mobile Number" autocomplete="tel" required>
               <textarea id="clientMessage" placeholder="Briefly describe your legal enquiry..." aria-label="Legal Enquiry" required></textarea>
               <button type="submit">Send Enquiry on WhatsApp →</button>
-              <div class="privacy-note">Please share only basic enquiry details here. Avoid sending passwords, OTPs, bank details or highly sensitive/confidential documents. See <a href="#privacy">Privacy & Data Notice</a>.</div>
             </form>
 
           </div>
 
         </div>
 
-      </section>
-
-
-      <!-- PRIVACY & DATA NOTICE -->
-
-      <section id="privacy" class="section reveal">
-        <div class="section-heading">
-          <div class="eyebrow">PRIVACY</div>
-          <h2>Privacy & Data Notice</h2>
-          <p>This website may receive basic contact details when you voluntarily submit the enquiry form or contact options.</p>
-        </div>
-
-        <div class="about-content">
-          <p><strong>Information collected:</strong> Name, mobile number and the basic legal enquiry you choose to provide.</p>
-          <p><strong>How it is used:</strong> The enquiry form prepares a WhatsApp message so that the submitted information can be used to respond to your enquiry and discuss the matter further.</p>
-          <p><strong>What you should not send:</strong> Do not submit passwords, OTPs, banking credentials, payment card details or unnecessary highly sensitive/confidential documents through this website form.</p>
-          <p><strong>Third-party services:</strong> WhatsApp, email services, Google Fonts and Supabase may process information according to their own terms and privacy practices. By choosing these contact methods, you are using those third-party services.</p>
-          <p><strong>Choice:</strong> You can contact the website owner directly by phone or email instead of using the enquiry form.</p>
-        </div>
       </section>
 
 
@@ -1958,14 +1826,14 @@
           <a href="#faq">FAQ</a>
           <a href="#contact">Free Consultation</a>
           <a href="https://www.instagram.com/vip.in.247/" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="#privacy">Privacy & Data Notice</a>
           <a href="admin.html">Admin Login</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
         </div>
 
       </div>
 
       <div class="copyright">
-        © 2026 Bipin Kumar Maurya | Legal Information & Legal Consultant · Privacy & Data Notice
+        © 2026 Bipin Kumar Maurya | Legal Information & Legal Consultant
       </div>
 
     </footer>
@@ -1990,25 +1858,15 @@
       const button = document.getElementById("menuButton");
       nav.classList.toggle("active");
       const isOpen = nav.classList.contains("active");
-      document.body.classList.toggle("menu-open", isOpen);
       button.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      button.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
-    }
-
-    function closeMobileMenu(){
-      const nav = document.getElementById("navLinks");
-      const button = document.getElementById("menuButton");
-      nav.classList.remove("active");
-      document.body.classList.remove("menu-open");
-      button.setAttribute("aria-expanded", "false");
-      button.setAttribute("aria-label", "Open navigation menu");
     }
 
     document.querySelectorAll(".nav-links a").forEach(function(link){
       link.addEventListener("click",function(){
         const nav = document.getElementById("navLinks");
         const button = document.getElementById("menuButton");
-        closeMobileMenu();
+        nav.classList.remove("active");
+        button.setAttribute("aria-expanded", "false");
       });
     });
 
@@ -2020,7 +1878,8 @@
     let practiceExplorerHistory = false;
 
     function openPracticeExplorer(){
-      closeMobileMenu();
+      document.getElementById("navLinks").classList.remove("active");
+      document.getElementById("menuButton").setAttribute("aria-expanded", "false");
       const explorer = document.getElementById("practiceExplorer");
       document.body.classList.add("practice-open");
       explorer.setAttribute("aria-hidden", "false");
@@ -2058,18 +1917,6 @@
     document.addEventListener("keydown", function(event){
       if(event.key === "Escape" && document.body.classList.contains("practice-open")){
         closePracticeExplorer();
-        return;
-      }
-      if(event.key === "Escape" && document.getElementById("navLinks").classList.contains("active")){
-        closeMobileMenu();
-      }
-    });
-
-    document.addEventListener("click", function(event){
-      const nav = document.getElementById("navLinks");
-      const button = document.getElementById("menuButton");
-      if(window.innerWidth < 980 && nav.classList.contains("active") && !nav.contains(event.target) && !button.contains(event.target)){
-        closeMobileMenu();
       }
     });
 
@@ -2095,10 +1942,6 @@
       const name = document.getElementById("clientName").value.trim();
       const phone = document.getElementById("clientPhone").value.trim();
       const message = document.getElementById("clientMessage").value.trim();
-
-      if(!name || !phone || !message){
-        return;
-      }
 
       const whatsappMessage =
         "New Client Enquiry\n\n" +
@@ -2137,33 +1980,6 @@
 
     const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
 
-    function updateArticleStructuredData(articles){
-      const old = document.getElementById("homeArticleStructuredData");
-      if(old) old.remove();
-
-      const itemList = (articles || []).map(function(article,index){
-        return {
-          "@type":"ListItem",
-          "position":index + 1,
-          "name":article.title || "Legal Article",
-          "url":window.location.origin + "/article.html?id=" + encodeURIComponent(article.id)
-        };
-      });
-
-      if(!itemList.length) return;
-
-      const script = document.createElement("script");
-      script.id = "homeArticleStructuredData";
-      script.type = "application/ld+json";
-      script.textContent = JSON.stringify({
-        "@context":"https://schema.org",
-        "@type":"ItemList",
-        "name":"Latest Legal Articles by Bipin Kumar Maurya",
-        "itemListElement":itemList
-      });
-      document.head.appendChild(script);
-    }
-
     async function loadHomeArticles(){
       const container = document.getElementById("home-articles-list");
       try{
@@ -2182,7 +1998,6 @@
         }
 
         container.innerHTML = "";
-        updateArticleStructuredData(data);
 
         data.forEach(function(article,index){
           const card = document.createElement("article");
@@ -2221,7 +2036,6 @@
         console.error("Legal Articles Error:", error);
         container.innerHTML = '<div class="articles-loading">Legal Articles could not be loaded at the moment.</div>';
       }
-      container.setAttribute("aria-busy", "false");
     }
 
     function formatArticleDate(dateValue){
