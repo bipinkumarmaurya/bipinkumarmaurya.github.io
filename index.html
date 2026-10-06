@@ -298,21 +298,22 @@
       width:390px;
       height:390px;
       border-radius:50%;
-      border:1px solid rgba(224,189,115,.52);
       background:
         radial-gradient(
           circle,
-          rgba(224,189,115,.13) 0%,
-          rgba(224,189,115,.055) 42%,
-          rgba(224,189,115,.015) 67%,
-          transparent 74%
+          rgba(224,189,115,.22) 0%,
+          rgba(224,189,115,.12) 28%,
+          rgba(224,189,115,.055) 48%,
+          rgba(224,189,115,.018) 64%,
+          transparent 76%
         );
+      filter:blur(7px);
       box-shadow:
-        0 0 35px rgba(224,189,115,.18),
-        0 0 75px rgba(224,189,115,.09),
-        inset 0 0 35px rgba(224,189,115,.08);
+        0 0 35px rgba(224,189,115,.12),
+        0 0 75px rgba(224,189,115,.07);
       animation:heroRing 6s ease-in-out infinite;
       z-index:-2;
+      pointer-events:none;
     }
 
     .hero-photo::after{
@@ -343,13 +344,35 @@
       object-fit:cover;
       object-position:center top;
       border-radius:50%;
-      border:3px solid rgba(224,189,115,.82);
+      border:none;
+      background:transparent;
+
+      /*
+        Photo ki outer boundary gradually fade hogi.
+        Isse photo hero background me smoothly blend hogi.
+      */
+      -webkit-mask-image:radial-gradient(
+        circle,
+        #000 48%,
+        rgba(0,0,0,.98) 61%,
+        rgba(0,0,0,.78) 71%,
+        rgba(0,0,0,.38) 82%,
+        transparent 95%
+      );
+
+      mask-image:radial-gradient(
+        circle,
+        #000 48%,
+        rgba(0,0,0,.98) 61%,
+        rgba(0,0,0,.78) 71%,
+        rgba(0,0,0,.38) 82%,
+        transparent 95%
+      );
 
       box-shadow:
-        0 0 0 8px rgba(224,189,115,.045),
-        0 0 0 18px rgba(224,189,115,.025),
-        0 25px 60px rgba(0,0,0,.42),
-        0 0 45px rgba(224,189,115,.16);
+        0 0 22px rgba(224,189,115,.35),
+        0 0 48px rgba(224,189,115,.18),
+        0 25px 60px rgba(0,0,0,.42);
 
       filter:saturate(.96) contrast(1.02);
       animation:heroFloat 5.5s ease-in-out infinite;
@@ -361,10 +384,9 @@
       transform:translateY(-6px) scale(1.015);
 
       box-shadow:
-        0 0 0 8px rgba(224,189,115,.07),
-        0 0 0 18px rgba(224,189,115,.035),
-        0 30px 70px rgba(0,0,0,.48),
-        0 0 60px rgba(224,189,115,.25);
+        0 0 28px rgba(224,189,115,.42),
+        0 0 60px rgba(224,189,115,.24),
+        0 30px 70px rgba(0,0,0,.48);
     }
 
     @keyframes heroFloat{
