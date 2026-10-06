@@ -260,25 +260,49 @@
         0 0 0 140px rgba(224,189,115,.018);
     }
 
-    /*
-      IMPORTANT:
-      Hero is intentionally single-column.
-      Right-side "Your Legal Matter" panel removed.
-    */
-
     .hero-inner{
       max-width:1240px;
       min-height:650px;
       margin:auto;
       padding:70px 5%;
-      display:flex;
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
       align-items:center;
+      gap:55px;
       position:relative;
       z-index:2;
     }
 
-    .hero-inner > div{
+    .hero-inner > div:first-child{
       max-width:850px;
+    }
+
+    .hero-photo{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      position:relative;
+    }
+
+    .hero-photo::before{
+      content:"";
+      position:absolute;
+      width:min(380px,90%);
+      aspect-ratio:1/1;
+      border:1px solid rgba(224,189,115,.5);
+      border-radius:50%;
+      box-shadow:0 0 0 18px rgba(224,189,115,.05);
+    }
+
+    .hero-photo img{
+      position:relative;
+      width:min(360px,90%);
+      aspect-ratio:1/1;
+      object-fit:cover;
+      object-position:center top;
+      border-radius:18px;
+      border:3px solid rgba(224,189,115,.8);
+      box-shadow:0 22px 55px rgba(0,0,0,.3);
     }
 
     .eyebrow{
@@ -841,12 +865,6 @@
       transition:.45s ease;
     }
 
-    /*
-      Desktop open height.
-      Mobile value is increased below so the fourth card
-      never gets cut.
-    */
-
     .bare-grid.library-open{
       max-height:1200px;
       opacity:1;
@@ -986,12 +1004,6 @@
       font-size:13px;
       margin-top:12px;
     }
-
-    /*
-      FIX:
-      Phone / Email / Location text was not clearly visible.
-      These rules force proper dark text on the light background.
-    */
 
     .enquiry-intro .contact-mini{
       margin-top:28px;
@@ -1245,6 +1257,11 @@
         min-height:auto;
         padding-top:75px;
         padding-bottom:75px;
+        grid-template-columns:1fr;
+      }
+
+      .hero-photo{
+        margin-top:10px;
       }
 
       .about-grid,
@@ -1304,6 +1321,7 @@
 
       .hero-inner{
         padding:58px 20px;
+        grid-template-columns:1fr;
       }
 
       .hero h1{
@@ -1320,6 +1338,18 @@
 
       .hero-note{
         line-height:1.7;
+      }
+
+      .hero-photo{
+        margin-top:30px;
+      }
+
+      .hero-photo img{
+        width:min(290px,80vw);
+      }
+
+      .hero-photo::before{
+        width:min(310px,85vw);
       }
 
       .trust-grid{
@@ -1363,12 +1393,6 @@
         font-size:32px;
       }
 
-
-      /*
-        MOBILE LEGAL RESOURCES FIX
-        The previous 700px max-height could cut
-        the Miscellaneous Laws card.
-      */
 
       .library-toggle{
         padding:20px 17px;
@@ -1419,9 +1443,6 @@
         font-size:43px;
       }
 
-      /*
-        MOBILE CONTACT TEXT FIX
-      */
 
       .enquiry-intro .contact-mini{
         gap:13px;
@@ -1585,6 +1606,15 @@
         <div class="hero-note">
           PRACTICAL GUIDANCE · LEGAL AWARENESS · CLEAR INFORMATION
         </div>
+
+      </div>
+
+
+      <div class="hero-photo">
+
+        <img
+          src="advocate.png"
+          alt="Bipin Kumar Maurya - Legal Consultant">
 
       </div>
 
