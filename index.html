@@ -518,20 +518,37 @@
     }
 
     .contact-mini{
-      margin:25px 0;
-      display:grid;
-      gap:11px;
-    }
+  margin:25px 0;
+  display:grid;
+  gap:12px;
+}
 
-    .contact-mini div{
-      font-size:13px;
-      color:#dce6ef;
-    }
+.contact-mini div{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  font-size:14px;
+  line-height:1.6;
+  color:#eaf1f7;
+  word-break:break-word;
+}
 
-    .contact-mini strong{
-      color:var(--gold2);
-      margin-right:8px;
-    }
+.contact-mini strong{
+  flex:0 0 72px;
+  color:var(--gold2);
+  font-weight:700;
+}
+
+.contact-mini a{
+  color:#ffffff;
+  font-weight:600;
+  text-decoration:none;
+  word-break:break-word;
+}
+
+.contact-mini a:hover{
+  color:var(--gold2);
+}
 
     /* =========================
        PRACTICE AREAS
@@ -1219,7 +1236,18 @@
         min-height:68px;
         padding:0 18px;
       }
+.contact-mini div{
+  font-size:13px;
+  gap:8px;
+}
 
+.contact-mini strong{
+  flex:0 0 65px;
+}
+
+.contact-mini a{
+  font-size:13px;
+}
       .nav-links{
         top:68px;
         padding-left:18px;
