@@ -14,9 +14,7 @@
   <meta name="language" content="English">
   <meta name="geo.region" content="IN-UP">
   <meta name="geo.placename" content="Gorakhpur, Uttar Pradesh, India">
-
   <link rel="canonical" href="https://bipinkumarmaurya.github.io/">
-
   <meta name="google-site-verification" content="ad_9dYPWp9U3cuvj17PGE6DQTWQePiF1BH_sFx9lGEs">
 
   <meta property="og:type" content="website">
@@ -25,14 +23,12 @@
   <meta property="og:url" content="https://bipinkumarmaurya.github.io/">
   <meta property="og:site_name" content="Bipin Kumar Maurya">
   <meta property="og:locale" content="en_IN">
-
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Bipin Kumar Maurya | Legal Consultant in Gorakhpur">
   <meta name="twitter:description" content="Legal information and legal assistance relating to Criminal, Civil, Family, Property, Consumer and Labour matters in Gorakhpur, Uttar Pradesh.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
@@ -71,7 +67,6 @@
   </script>
 
   <style>
-
     :root{
       --navy:#071a33;
       --navy2:#0b2748;
@@ -92,11 +87,11 @@
     *{
       box-sizing:border-box;
       margin:0;
-      padding:0;
+      padding:0
     }
 
     html{
-      scroll-behavior:smooth;
+      scroll-behavior:smooth
     }
 
     body{
@@ -109,27 +104,21 @@
 
     a{
       text-decoration:none;
-      color:inherit;
+      color:inherit
     }
 
-    button,
-    input,
-    textarea{
-      font:inherit;
+    button,input,textarea{
+      font:inherit
     }
 
     button{
-      cursor:pointer;
+      cursor:pointer
     }
 
     img{
       max-width:100%;
-      display:block;
+      display:block
     }
-
-    /* =========================
-       TOP BAR
-    ========================= */
 
     .topbar{
       background:var(--navy);
@@ -147,10 +136,6 @@
       flex-wrap:wrap;
     }
 
-    /* =========================
-       NAVBAR
-    ========================= */
-
     .navbar{
       position:sticky;
       top:0;
@@ -162,7 +147,7 @@
     }
 
     .navbar.scrolled{
-      box-shadow:0 8px 30px rgba(8,28,51,.08);
+      box-shadow:0 8px 30px rgba(8,28,51,.08)
     }
 
     .nav-inner{
@@ -185,7 +170,7 @@
     }
 
     .brand span{
-      color:var(--gold);
+      color:var(--gold)
     }
 
     .nav-links{
@@ -203,7 +188,7 @@
     }
 
     .nav-links a:hover{
-      color:var(--gold);
+      color:var(--gold)
     }
 
     .nav-contact{
@@ -223,25 +208,13 @@
       height:44px;
     }
 
-    /* =========================
-       HERO
-       RIGHT PANEL REMOVED
-    ========================= */
-
     .hero{
       position:relative;
       overflow:hidden;
       min-height:650px;
-
       background:
-        linear-gradient(
-          90deg,
-          rgba(5,23,43,.96) 0%,
-          rgba(7,28,52,.91) 48%,
-          rgba(7,28,52,.68) 100%
-        ),
+        linear-gradient(90deg,rgba(5,23,43,.96) 0%,rgba(7,28,52,.91) 48%,rgba(7,28,52,.68) 100%),
         url("banner.png") center/cover no-repeat;
-
       color:#fff;
     }
 
@@ -264,17 +237,12 @@
       min-height:650px;
       margin:auto;
       padding:70px 5%;
-
-      display:flex;
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
       align-items:center;
-
+      gap:55px;
       position:relative;
       z-index:2;
-    }
-
-    .hero-inner > div:first-child{
-      width:100%;
-      max-width:850px;
     }
 
     .eyebrow{
@@ -287,7 +255,7 @@
     }
 
     .hero h1{
-      max-width:850px;
+      max-width:760px;
       font-family:"Playfair Display",serif;
       font-size:clamp(48px,6vw,78px);
       line-height:1.04;
@@ -296,11 +264,11 @@
     }
 
     .hero h1 span{
-      color:var(--gold2);
+      color:var(--gold2)
     }
 
     .hero-subtitle{
-      max-width:780px;
+      max-width:650px;
       margin-top:22px;
       color:#dce6f0;
       font-size:17px;
@@ -336,24 +304,24 @@
     .btn-primary{
       background:var(--gold);
       color:#fff;
-      border:1px solid var(--gold);
+      border:1px solid var(--gold)
     }
 
     .btn-primary:hover{
       background:#b88938;
-      transform:translateY(-2px);
+      transform:translateY(-2px)
     }
 
     .btn-light{
       border:1px solid rgba(255,255,255,.42);
       color:#fff;
-      background:rgba(255,255,255,.04);
+      background:rgba(255,255,255,.04)
     }
 
     .btn-light:hover{
       background:#fff;
       color:var(--navy);
-      transform:translateY(-2px);
+      transform:translateY(-2px)
     }
 
     .hero-note{
@@ -363,9 +331,87 @@
       letter-spacing:1.2px;
     }
 
-    /* =========================
-       GENERAL SECTIONS
-    ========================= */
+    .hero-panel{
+      justify-self:end;
+      width:min(100%,470px);
+      padding:28px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.17);
+      box-shadow:0 25px 70px rgba(0,0,0,.2);
+      backdrop-filter:blur(10px);
+      border-radius:14px;
+    }
+
+    .hero-panel-title{
+      font-family:"Playfair Display",serif;
+      font-size:30px;
+      line-height:1.15;
+    }
+
+    .hero-panel p{
+      margin-top:10px;
+      color:#cbd8e5;
+      font-size:13px
+    }
+
+    .hero-services{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:22px;
+    }
+
+    .hero-service{
+      padding:13px;
+      border:1px solid rgba(255,255,255,.13);
+      background:rgba(0,0,0,.13);
+      border-radius:8px;
+      color:#e9f0f6;
+      font-size:12px;
+    }
+
+    .hero-service strong{
+      display:block;
+      color:var(--gold2);
+      font-size:11px;
+      margin-bottom:3px
+    }
+
+    .trust-strip{
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      box-shadow:0 8px 30px rgba(8,28,51,.05);
+    }
+
+    .trust-grid{
+      max-width:1240px;
+      margin:auto;
+      padding:24px 5%;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:0;
+    }
+
+    .trust-item{
+      padding:8px 25px;
+      border-right:1px solid var(--line);
+    }
+
+    .trust-item:last-child{
+      border-right:0
+    }
+
+    .trust-number{
+      font-family:"Playfair Display",serif;
+      font-size:27px;
+      color:var(--navy);
+    }
+
+    .trust-label{
+      font-size:11px;
+      color:var(--muted);
+      margin-top:2px
+    }
 
     .section{
       max-width:1240px;
@@ -375,7 +421,7 @@
 
     .section-head{
       max-width:760px;
-      margin-bottom:35px;
+      margin-bottom:35px
     }
 
     .section-head h2{
@@ -389,15 +435,11 @@
     .section-head p{
       margin-top:13px;
       color:var(--muted);
-      font-size:14px;
+      font-size:14px
     }
 
-    /* =========================
-       ABOUT
-    ========================= */
-
     #about{
-      background:var(--paper);
+      background:var(--paper)
     }
 
     .about-grid{
@@ -418,7 +460,7 @@
       color:#59677a;
       font-size:14px;
       line-height:1.9;
-      margin-bottom:17px;
+      margin-bottom:17px
     }
 
     .about-points{
@@ -438,19 +480,15 @@
     .about-point strong{
       display:block;
       color:var(--navy);
-      font-size:13px;
+      font-size:13px
     }
 
     .about-point span{
       display:block;
       color:var(--muted);
       font-size:11px;
-      margin-top:4px;
+      margin-top:4px
     }
-
-    /* =========================
-       CONSULTATION
-    ========================= */
 
     .consultation{
       background:var(--cream);
@@ -478,24 +516,24 @@
     .consult-copy p{
       margin-top:15px;
       color:#68717b;
-      font-size:14px;
+      font-size:14px
     }
 
     .consult-list{
       margin-top:25px;
       display:grid;
-      gap:10px;
+      gap:10px
     }
 
     .consult-list div{
       font-size:13px;
-      color:#334256;
+      color:#334256
     }
 
     .consult-list span{
       color:var(--gold);
       font-weight:800;
-      margin-right:8px;
+      margin-right:8px
     }
 
     .consult-card{
@@ -508,37 +546,51 @@
 
     .consult-card h3{
       font-family:"Playfair Display",serif;
-      font-size:30px;
+      font-size:30px
     }
 
     .consult-card p{
       color:#bdccda;
       font-size:13px;
-      margin-top:9px;
+      margin-top:9px
     }
 
     .contact-mini{
       margin:25px 0;
       display:grid;
-      gap:11px;
+      gap:11px
     }
 
     .contact-mini div{
       font-size:13px;
-      color:#dce6ef;
+      color:#dce6ef
     }
 
     .contact-mini strong{
       color:var(--gold2);
-      margin-right:8px;
+      margin-right:8px
     }
 
-    /* =========================
-       PRACTICE AREAS
-    ========================= */
+    /* FIX: Contact details in light Get In Touch section */
+    .enquiry-intro .contact-mini div{
+      color:#334256;
+    }
+
+    .enquiry-intro .contact-mini strong{
+      color:#a87928;
+    }
+
+    .enquiry-intro .contact-mini a{
+      color:var(--navy);
+      font-weight:600;
+    }
+
+    .enquiry-intro .contact-mini a:hover{
+      color:var(--gold);
+    }
 
     #practice{
-      background:var(--soft);
+      background:var(--soft)
     }
 
     .service-tabs{
@@ -576,7 +628,7 @@
     }
 
     .service-panel.active{
-      display:block;
+      display:block
     }
 
     .service-panel h3{
@@ -588,7 +640,7 @@
     .service-panel>p{
       color:var(--muted);
       font-size:13px;
-      margin-top:8px;
+      margin-top:8px
     }
 
     .service-list{
@@ -611,12 +663,8 @@
       content:"✓";
       color:var(--gold);
       font-weight:800;
-      margin-right:8px;
+      margin-right:8px
     }
-
-    /* =========================
-       CTA
-    ========================= */
 
     .cta{
       background:var(--navy2);
@@ -636,27 +684,23 @@
     .cta h2{
       font-family:"Playfair Display",serif;
       font-size:clamp(35px,4vw,52px);
-      line-height:1.08;
+      line-height:1.08
     }
 
     .cta p{
       color:#b9c9d9;
       margin-top:8px;
-      font-size:13px;
+      font-size:13px
     }
 
     .cta-actions{
       display:flex;
       gap:10px;
-      flex-wrap:wrap;
+      flex-wrap:wrap
     }
 
-    /* =========================
-       ARTICLES
-    ========================= */
-
     .articles-section{
-      background:#fff;
+      background:#fff
     }
 
     .articles-grid{
@@ -684,21 +728,21 @@
 
     .article-card:hover{
       transform:translateY(-3px);
-      box-shadow:var(--shadow);
+      box-shadow:var(--shadow)
     }
 
     .article-card.featured{
       grid-area:feature;
       min-height:330px;
-      background:linear-gradient(145deg,#f5f0e7,#fff);
+      background:linear-gradient(145deg,#f5f0e7,#fff)
     }
 
     .article-card:nth-child(2){
-      grid-area:side1;
+      grid-area:side1
     }
 
     .article-card:nth-child(3){
-      grid-area:side2;
+      grid-area:side2
     }
 
     .article-badge{
@@ -715,7 +759,7 @@
     .article-date{
       color:#8793a1;
       font-size:10px;
-      margin-top:15px;
+      margin-top:15px
     }
 
     .article-card h3{
@@ -723,43 +767,39 @@
       color:var(--navy);
       font-size:27px;
       line-height:1.18;
-      margin-top:10px;
+      margin-top:10px
     }
 
     .article-card.featured h3{
-      font-size:39px;
+      font-size:39px
     }
 
     .article-card p{
       color:var(--muted);
       font-size:12px;
       margin-top:10px;
-      flex:1;
+      flex:1
     }
 
     .article-card a{
       color:var(--blue);
       font-size:11px;
       font-weight:800;
-      margin-top:18px;
+      margin-top:18px
     }
 
     .articles-loading{
       padding:20px;
       color:var(--muted);
-      grid-column:1/-1;
+      grid-column:1/-1
     }
 
     .all-articles{
-      margin-top:25px;
+      margin-top:25px
     }
 
-    /* =========================
-       LEGAL RESOURCES
-    ========================= */
-
     #bare-acts{
-      background:var(--soft);
+      background:var(--soft)
     }
 
     .library-toggle{
@@ -778,7 +818,7 @@
 
     .library-toggle strong{
       font-family:"Playfair Display",serif;
-      font-size:28px;
+      font-size:28px
     }
 
     .library-toggle small{
@@ -787,13 +827,13 @@
       font-weight:800;
       letter-spacing:1.6px;
       font-size:9px;
-      margin-bottom:4px;
+      margin-bottom:4px
     }
 
     .library-toggle p{
       font-size:11px;
       color:var(--muted);
-      margin-top:4px;
+      margin-top:4px
     }
 
     .library-toggle-icon{
@@ -804,7 +844,7 @@
       display:grid;
       place-items:center;
       font-size:25px;
-      color:var(--gold);
+      color:var(--gold)
     }
 
     .bare-grid{
@@ -818,9 +858,10 @@
       transition:.45s ease;
     }
 
+    /* FIX: Enough height so all cards can fully open */
     .bare-grid.library-open{
-      max-height:700px;
-      opacity:1;
+      max-height:2000px;
+      opacity:1
     }
 
     .bare-card{
@@ -837,14 +878,14 @@
 
     .bare-card:hover{
       transform:translateY(-3px);
-      box-shadow:var(--shadow);
+      box-shadow:var(--shadow)
     }
 
     .bare-index{
       color:var(--gold);
       font-size:9px;
       font-weight:800;
-      letter-spacing:1.5px;
+      letter-spacing:1.5px
     }
 
     .bare-card h3{
@@ -852,13 +893,13 @@
       color:var(--navy);
       font-size:24px;
       line-height:1.15;
-      margin-top:13px;
+      margin-top:13px
     }
 
     .bare-card p{
       color:var(--muted);
       font-size:11px;
-      margin-top:7px;
+      margin-top:7px
     }
 
     .bare-link{
@@ -866,24 +907,20 @@
       justify-content:space-between;
       color:var(--blue);
       font-size:11px;
-      font-weight:800;
+      font-weight:800
     }
 
-    /* =========================
-       FAQ
-    ========================= */
-
     #faq{
-      background:#fff;
+      background:#fff
     }
 
     .faq-list{
       max-width:900px;
-      border-top:1px solid var(--line);
+      border-top:1px solid var(--line)
     }
 
     .faq-item{
-      border-bottom:1px solid var(--line);
+      border-bottom:1px solid var(--line)
     }
 
     .faq-question{
@@ -902,32 +939,28 @@
 
     .faq-question span:last-child{
       color:var(--gold);
-      font-size:20px;
+      font-size:20px
     }
 
     .faq-answer{
       display:grid;
       grid-template-rows:0fr;
-      transition:.25s ease;
+      transition:.25s ease
     }
 
     .faq-answer>div{
       overflow:hidden;
       color:var(--muted);
-      font-size:12px;
+      font-size:12px
     }
 
     .faq-answer p{
-      padding:0 35px 20px 0;
+      padding:0 35px 20px 0
     }
 
     .faq-item.active .faq-answer{
-      grid-template-rows:1fr;
+      grid-template-rows:1fr
     }
-
-    /* =========================
-       ENQUIRY
-    ========================= */
 
     .enquiry-section{
       background:linear-gradient(135deg,#f7f2e8,#fff);
@@ -945,13 +978,13 @@
       font-family:"Playfair Display",serif;
       color:var(--navy);
       font-size:52px;
-      line-height:1.05;
+      line-height:1.05
     }
 
     .enquiry-intro>p{
       color:var(--muted);
       font-size:13px;
-      margin-top:12px;
+      margin-top:12px
     }
 
     .enquiry-form{
@@ -978,12 +1011,12 @@
 
     .enquiry-form input:focus,
     .enquiry-form textarea:focus{
-      border-color:var(--gold);
+      border-color:var(--gold)
     }
 
     .enquiry-form textarea{
       min-height:145px;
-      resize:vertical;
+      resize:vertical
     }
 
     .enquiry-form button{
@@ -996,10 +1029,6 @@
       font-size:12px;
     }
 
-    /* =========================
-       DISCLAIMER
-    ========================= */
-
     .disclaimer{
       background:#f4f6f8;
       text-align:center;
@@ -1010,7 +1039,7 @@
     .disclaimer h2{
       font-family:"Playfair Display",serif;
       color:var(--navy);
-      font-size:28px;
+      font-size:28px
     }
 
     .disclaimer p{
@@ -1018,12 +1047,8 @@
       margin:8px auto 0;
       color:#758091;
       font-size:10px;
-      line-height:1.75;
+      line-height:1.75
     }
-
-    /* =========================
-       FOOTER
-    ========================= */
 
     footer{
       background:var(--navy);
@@ -1041,18 +1066,18 @@
 
     .footer-brand{
       font-family:"Playfair Display",serif;
-      font-size:28px;
+      font-size:28px
     }
 
     .footer-brand span{
-      color:var(--gold2);
+      color:var(--gold2)
     }
 
     .footer-text{
       max-width:470px;
       color:#b8c7d6;
       font-size:11px;
-      margin-top:8px;
+      margin-top:8px
     }
 
     .footer-links{
@@ -1065,11 +1090,11 @@
 
     .footer-links a{
       color:#dbe4ec;
-      font-size:11px;
+      font-size:11px
     }
 
     .footer-links a:hover{
-      color:var(--gold2);
+      color:var(--gold2)
     }
 
     .copyright{
@@ -1080,10 +1105,6 @@
       color:#9fb0c0;
       font-size:10px;
     }
-
-    /* =========================
-       FLOATING CONTACT
-    ========================= */
 
     .floating-contact{
       position:fixed;
@@ -1107,32 +1128,24 @@
 
     .float-call{
       background:var(--gold);
-      color:#fff;
+      color:#fff
     }
 
     .float-whatsapp{
       background:#25d366;
-      color:#fff;
+      color:#fff
     }
-
-    /* =========================
-       REVEAL
-    ========================= */
 
     .reveal{
       opacity:0;
       transform:translateY(20px);
-      transition:.7s ease;
+      transition:.7s ease
     }
 
     .reveal.visible{
       opacity:1;
-      transform:none;
+      transform:none
     }
-
-    /* =========================
-       TABLET
-    ========================= */
 
     @media(max-width:980px){
 
@@ -1151,115 +1164,134 @@
       }
 
       .nav-links.active{
-        display:flex;
+        display:flex
       }
 
       .nav-links a{
-        padding:9px 0;
+        padding:9px 0
       }
 
       .nav-contact{
-        text-align:center;
+        text-align:center
       }
 
       .menu-btn{
-        display:block;
+        display:block
       }
 
       .hero-inner{
+        grid-template-columns:1fr;
         min-height:auto;
         padding-top:75px;
-        padding-bottom:75px;
+        padding-bottom:75px
       }
 
-      .hero-inner > div:first-child{
-        max-width:850px;
+      .hero-panel{
+        justify-self:start
       }
 
       .about-grid,
       .consult-grid,
       .enquiry-grid{
         grid-template-columns:1fr;
-        gap:35px;
+        gap:35px
       }
 
       .service-list{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:1fr 1fr
       }
 
       .bare-grid{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:1fr 1fr
       }
 
       .cta-inner{
         align-items:flex-start;
-        flex-direction:column;
+        flex-direction:column
       }
 
       .footer-grid{
-        grid-template-columns:1fr;
+        grid-template-columns:1fr
       }
 
       .footer-links{
-        justify-content:flex-start;
+        justify-content:flex-start
       }
     }
-
-    /* =========================
-       MOBILE
-    ========================= */
 
     @media(max-width:700px){
 
       .topbar{
-        display:none;
+        display:none
       }
 
       .nav-inner{
         min-height:68px;
-        padding:0 18px;
+        padding:0 18px
       }
 
       .nav-links{
         top:68px;
         padding-left:18px;
-        padding-right:18px;
+        padding-right:18px
       }
 
       .hero{
-        min-height:0;
+        min-height:0
       }
 
       .hero-inner{
-        padding:58px 20px;
+        padding:58px 20px
       }
 
       .hero h1{
-        font-size:49px;
+        font-size:49px
       }
 
       .hero-subtitle{
-        font-size:14px;
+        font-size:14px
+      }
+
+      .hero-panel{
+        padding:23px
+      }
+
+      .hero-panel-title{
+        font-size:27px
+      }
+
+      .hero-services{
+        grid-template-columns:1fr 1fr
+      }
+
+      .trust-grid{
+        grid-template-columns:1fr 1fr;
+        padding:18px
+      }
+
+      .trust-item{
+        padding:10px 14px;
+        border-bottom:1px solid var(--line)
       }
 
       .section{
-        padding:60px 20px;
+        padding:60px 20px
       }
 
       .about-points{
-        grid-template-columns:1fr;
+        grid-template-columns:1fr
       }
 
       .consult-grid{
-        padding:60px 20px;
+        padding:60px 20px
       }
 
       .service-list{
-        grid-template-columns:1fr;
+        grid-template-columns:1fr
       }
 
       .service-panel{
-        padding:22px;
+        padding:22px
       }
 
       .articles-grid{
@@ -1267,74 +1299,74 @@
         grid-template-areas:
           "feature"
           "side1"
-          "side2";
+          "side2"
       }
 
       .article-card.featured{
-        min-height:260px;
+        min-height:260px
       }
 
       .article-card.featured h3{
-        font-size:32px;
+        font-size:32px
       }
 
       .bare-grid{
         grid-template-columns:1fr;
       }
 
+      /* FIX: Mobile Legal Resources - all cards fully visible */
+      .bare-grid.library-open{
+        max-height:2000px;
+      }
+
+      .bare-card{
+        min-height:190px;
+      }
+
       .enquiry-intro h2{
-        font-size:43px;
+        font-size:43px
       }
 
       .enquiry-form{
-        padding:18px;
+        padding:18px
       }
 
       .disclaimer{
-        padding:35px 20px;
+        padding:35px 20px
       }
 
       footer{
         padding-left:20px;
-        padding-right:20px;
+        padding-right:20px
       }
 
       .footer-links{
-        gap:12px 17px;
+        gap:12px 17px
       }
 
       .floating-contact{
         right:10px;
-        bottom:10px;
+        bottom:10px
       }
     }
-
-    /* =========================
-       REDUCED MOTION
-    ========================= */
 
     @media(prefers-reduced-motion:reduce){
 
       *{
         scroll-behavior:auto!important;
         animation:none!important;
-        transition:none!important;
+        transition:none!important
       }
 
       .reveal{
         opacity:1!important;
-        transform:none!important;
+        transform:none!important
       }
     }
-
   </style>
 </head>
 
 <body>
-
-  <!-- =========================
-       TOP BAR
-  ========================= -->
 
   <div class="topbar">
     <div class="topbar-inner">
@@ -1343,16 +1375,10 @@
     </div>
   </div>
 
-  <!-- =========================
-       NAVBAR
-  ========================= -->
-
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
 
-      <a href="#home"
-         class="brand"
-         aria-label="Bipin Kumar Maurya Home">
+      <a href="#home" class="brand" aria-label="Bipin Kumar Maurya Home">
         Bipin Kumar <span>Maurya</span>
       </a>
 
@@ -1368,46 +1394,20 @@
       </button>
 
       <div class="nav-links" id="navLinks">
-
         <a href="#home">Home</a>
-
         <a href="#about">About</a>
-
         <a href="#practice">Practice Areas</a>
-
         <a href="#articles">Legal Articles</a>
-
         <a href="#bare-acts">Legal Resources</a>
-
         <a href="#faq">FAQ</a>
-
-        <a href="#contact" class="nav-contact">
-          Free Consultation
-        </a>
-
-        <a
-          href="https://www.instagram.com/vip.in.247/"
-          target="_blank"
-          rel="noopener noreferrer">
-          Instagram
-        </a>
-
-        <a href="admin.html">
-          Admin Login
-        </a>
-
-        <a href="privacy-policy.html">
-          Privacy Policy
-        </a>
-
+        <a href="#contact" class="nav-contact">Free Consultation</a>
+        <a href="https://www.instagram.com/vip.in.247/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="admin.html">Admin Login</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
       </div>
+
     </div>
   </nav>
-
-  <!-- =========================
-       HERO
-       RIGHT PANEL REMOVED
-  ========================= -->
 
   <header class="hero" id="home">
 
@@ -1433,7 +1433,6 @@
         </div>
 
         <div class="hero-actions">
-
           <a href="#contact" class="btn btn-primary">
             Free Consultation
           </a>
@@ -1441,7 +1440,6 @@
           <a href="#practice" class="btn btn-light">
             Explore Legal Services
           </a>
-
         </div>
 
         <div class="hero-note">
@@ -1450,17 +1448,88 @@
 
       </div>
 
-    </div>
+      <div class="hero-panel">
 
+        <div class="eyebrow">
+          YOUR LEGAL MATTER
+        </div>
+
+        <div class="hero-panel-title">
+          Practical advice, clearly delivered.
+        </div>
+
+        <p>
+          Explore information and consultation support across major areas of law,
+          with a focus on clarity and understanding.
+        </p>
+
+        <div class="hero-services">
+
+          <div class="hero-service">
+            <strong>01</strong>
+            Criminal Law
+          </div>
+
+          <div class="hero-service">
+            <strong>02</strong>
+            Civil Law
+          </div>
+
+          <div class="hero-service">
+            <strong>03</strong>
+            Family Law
+          </div>
+
+          <div class="hero-service">
+            <strong>04</strong>
+            Property Law
+          </div>
+
+          <div class="hero-service">
+            <strong>05</strong>
+            Consumer Law
+          </div>
+
+          <div class="hero-service">
+            <strong>06</strong>
+            Labour Law
+          </div>
+
+        </div>
+      </div>
+
+    </div>
   </header>
 
-  <!-- Trust Strip Removed -->
+  <section class="trust-strip">
+
+    <div class="trust-grid">
+
+      <div class="trust-item">
+        <div class="trust-number">06</div>
+        <div class="trust-label">Practice Areas</div>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-number">Legal</div>
+        <div class="trust-label">Information &amp; Awareness</div>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-number">Online</div>
+        <div class="trust-label">Enquiry &amp; Consultation</div>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-number">Gorakhpur</div>
+        <div class="trust-label">Uttar Pradesh</div>
+      </div>
+
+    </div>
+
+  </section>
 
   <main>
-
-    <!-- =========================
-         ABOUT
-    ========================= -->
 
     <section id="about">
 
@@ -1483,9 +1552,8 @@
           <div class="about-copy">
 
             <p>
-              I, Bipin Kumar Maurya, provide legal information,
-              consultation and assistance relating to legal matters
-              in District Gorakhpur.
+              I, Bipin Kumar Maurya, provide legal information, consultation
+              and assistance relating to legal matters in District Gorakhpur.
             </p>
 
             <p>
@@ -1532,10 +1600,6 @@
       </div>
 
     </section>
-
-    <!-- =========================
-         CONSULTATION
-    ========================= -->
 
     <section class="consultation">
 
@@ -1600,9 +1664,7 @@
 
             <div>
               <strong>Phone</strong>
-              <a href="tel:7080884964">
-                7080884964
-              </a>
+              <a href="tel:7080884964">7080884964</a>
             </div>
 
             <div>
@@ -1629,10 +1691,6 @@
 
     </section>
 
-    <!-- =========================
-         PRACTICE AREAS
-    ========================= -->
-
     <section id="practice">
 
       <div class="section reveal">
@@ -1653,10 +1711,7 @@
 
         </div>
 
-        <div
-          class="service-tabs"
-          role="tablist"
-          aria-label="Practice Areas">
+        <div class="service-tabs" role="tablist" aria-label="Practice Areas">
 
           <button
             class="service-tab active"
@@ -1704,9 +1759,7 @@
 
         <div class="service-panel active" id="service-criminal">
 
-          <h3>
-            Criminal Law
-          </h3>
+          <h3>Criminal Law</h3>
 
           <p>
             Information and guidance relating to criminal-law matters,
@@ -1714,129 +1767,107 @@
           </p>
 
           <div class="service-list">
-
             <div>Bail Matters</div>
             <div>FIR Related Guidance</div>
             <div>Investigation Process</div>
             <div>Trial Related Information</div>
             <div>Criminal Procedure</div>
             <div>Available Legal Remedies</div>
-
           </div>
 
         </div>
 
         <div class="service-panel" id="service-civil">
 
-          <h3>
-            Civil Law
-          </h3>
+          <h3>Civil Law</h3>
 
           <p>
             Information relating to civil disputes and procedural remedies.
           </p>
 
           <div class="service-list">
-
             <div>Civil Disputes</div>
             <div>Money Recovery</div>
             <div>Injunctions</div>
             <div>Specific Performance</div>
             <div>Civil Procedure</div>
             <div>Related Legal Remedies</div>
-
           </div>
 
         </div>
 
         <div class="service-panel" id="service-family">
 
-          <h3>
-            Family Law
-          </h3>
+          <h3>Family Law</h3>
 
           <p>
             General information relating to family and matrimonial legal matters.
           </p>
 
           <div class="service-list">
-
             <div>Matrimonial Matters</div>
             <div>Divorce</div>
             <div>Maintenance</div>
             <div>Child Custody</div>
             <div>Family Disputes</div>
             <div>Related Legal Issues</div>
-
           </div>
 
         </div>
 
         <div class="service-panel" id="service-property">
 
-          <h3>
-            Property Law
-          </h3>
+          <h3>Property Law</h3>
 
           <p>
             General information relating to property, land and ownership matters.
           </p>
 
           <div class="service-list">
-
             <div>Property Disputes</div>
             <div>Land Related Issues</div>
             <div>Ownership Claims</div>
             <div>Partition</div>
             <div>Title Related Matters</div>
             <div>Property Documentation</div>
-
           </div>
 
         </div>
 
         <div class="service-panel" id="service-consumer">
 
-          <h3>
-            Consumer Law
-          </h3>
+          <h3>Consumer Law</h3>
 
           <p>
             Information relating to consumer complaints and remedies under applicable law.
           </p>
 
           <div class="service-list">
-
             <div>Consumer Complaints</div>
             <div>Defective Goods</div>
             <div>Deficient Services</div>
             <div>Refund Claims</div>
             <div>Consumer Forum</div>
             <div>Related Legal Guidance</div>
-
           </div>
 
         </div>
 
         <div class="service-panel" id="service-labour">
 
-          <h3>
-            Labour Law
-          </h3>
+          <h3>Labour Law</h3>
 
           <p>
             General information relating to employment and workplace legal issues.
           </p>
 
           <div class="service-list">
-
             <div>Employment Issues</div>
             <div>Workplace Rights</div>
             <div>Termination</div>
             <div>Wages</div>
             <div>Labour Disputes</div>
             <div>Employment-related Guidance</div>
-
           </div>
 
         </div>
@@ -1844,10 +1875,6 @@
       </div>
 
     </section>
-
-    <!-- =========================
-         CTA
-    ========================= -->
 
     <section class="cta">
 
@@ -1889,10 +1916,6 @@
 
     </section>
 
-    <!-- =========================
-         ARTICLES
-    ========================= -->
-
     <section id="articles" class="articles-section">
 
       <div class="section reveal">
@@ -1908,8 +1931,8 @@
           </h2>
 
           <p>
-            Useful and informative articles on important topics relating
-            to law, legal awareness and Indian law.
+            Useful and informative articles on important topics relating to law,
+            legal awareness and Indian law.
           </p>
 
         </div>
@@ -1936,10 +1959,6 @@
       </div>
 
     </section>
-
-    <!-- =========================
-         LEGAL RESOURCES
-    ========================= -->
 
     <section id="bare-acts">
 
@@ -1999,9 +2018,7 @@
           id="libraryCards"
           aria-hidden="true">
 
-          <a
-            href="criminal-laws.html"
-            class="bare-card">
+          <a href="criminal-laws.html" class="bare-card">
 
             <div>
 
@@ -2026,9 +2043,7 @@
 
           </a>
 
-          <a
-            href="constitutional-laws.html"
-            class="bare-card">
+          <a href="constitutional-laws.html" class="bare-card">
 
             <div>
 
@@ -2053,9 +2068,7 @@
 
           </a>
 
-          <a
-            href="commerce-corporate-laws.html"
-            class="bare-card">
+          <a href="commerce-corporate-laws.html" class="bare-card">
 
             <div>
 
@@ -2080,9 +2093,7 @@
 
           </a>
 
-          <a
-            href="miscellaneous-laws.html"
-            class="bare-card">
+          <a href="miscellaneous-laws.html" class="bare-card">
 
             <div>
 
@@ -2112,10 +2123,6 @@
       </div>
 
     </section>
-
-    <!-- =========================
-         FAQ
-    ========================= -->
 
     <section id="faq">
 
@@ -2156,17 +2163,13 @@
             </button>
 
             <div class="faq-answer">
-
               <div>
-
                 <p>
                   Legal assistance may relate to Criminal, Civil, Family,
                   Property, Consumer and Labour Law, subject to the facts
                   and circumstances of each matter.
                 </p>
-
               </div>
-
             </div>
 
           </div>
@@ -2188,16 +2191,12 @@
             </button>
 
             <div class="faq-answer">
-
               <div>
-
                 <p>
                   You can use the phone, WhatsApp or email contact options
                   available on this website.
                 </p>
-
               </div>
-
             </div>
 
           </div>
@@ -2219,16 +2218,12 @@
             </button>
 
             <div class="faq-answer">
-
               <div>
-
                 <p>
                   Yes. You can use the enquiry form below to send your
                   basic enquiry through WhatsApp.
                 </p>
-
               </div>
-
             </div>
 
           </div>
@@ -2250,16 +2245,12 @@
             </button>
 
             <div class="faq-answer">
-
               <div>
-
                 <p>
                   No. Information provided on this website is intended
                   for general legal information and awareness purposes only.
                 </p>
-
               </div>
-
             </div>
 
           </div>
@@ -2281,16 +2272,12 @@
             </button>
 
             <div class="faq-answer">
-
               <div>
-
                 <p>
                   No. Every legal matter depends on its specific facts,
                   circumstances and applicable law.
                 </p>
-
               </div>
-
             </div>
 
           </div>
@@ -2300,10 +2287,6 @@
       </div>
 
     </section>
-
-    <!-- =========================
-         CONTACT
-    ========================= -->
 
     <section id="contact" class="enquiry-section">
 
@@ -2388,10 +2371,6 @@
 
     </section>
 
-    <!-- =========================
-         DISCLAIMER
-    ========================= -->
-
     <section class="disclaimer reveal">
 
       <h2>
@@ -2414,10 +2393,6 @@
 
   </main>
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
   <footer>
 
     <div class="footer-grid">
@@ -2437,33 +2412,13 @@
 
       <div class="footer-links">
 
-        <a href="#home">
-          Home
-        </a>
-
-        <a href="#about">
-          About
-        </a>
-
-        <a href="#practice">
-          Practice Areas
-        </a>
-
-        <a href="articles.html">
-          Legal Articles
-        </a>
-
-        <a href="#bare-acts">
-          Legal Resources
-        </a>
-
-        <a href="#faq">
-          FAQ
-        </a>
-
-        <a href="#contact">
-          Free Consultation
-        </a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#practice">Practice Areas</a>
+        <a href="articles.html">Legal Articles</a>
+        <a href="#bare-acts">Legal Resources</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Free Consultation</a>
 
         <a
           href="https://www.instagram.com/vip.in.247/"
@@ -2490,13 +2445,7 @@
 
   </footer>
 
-  <!-- =========================
-       FLOATING CONTACT
-  ========================= -->
-
-  <div
-    class="floating-contact"
-    aria-label="Contact options">
+  <div class="floating-contact" aria-label="Contact options">
 
     <a
       href="tel:7080884964"
@@ -2518,10 +2467,6 @@
 
   </div>
 
-  <!-- =========================
-       MAIN JAVASCRIPT
-  ========================= -->
-
   <script>
 
     function toggleMenu(){
@@ -2538,7 +2483,6 @@
 
     }
 
-
     document.querySelectorAll(".nav-links a").forEach(function(link){
 
       link.addEventListener("click",function(){
@@ -2548,25 +2492,18 @@
 
         nav.classList.remove("active");
 
-        button.setAttribute(
-          "aria-expanded",
-          "false"
-        );
+        button.setAttribute("aria-expanded","false");
 
       });
 
     });
-
 
     window.addEventListener("scroll",function(){
 
       document
         .getElementById("navbar")
         .classList
-        .toggle(
-          "scrolled",
-          window.scrollY>15
-        );
+        .toggle("scrolled",window.scrollY>15);
 
     },{passive:true});
 
@@ -2576,29 +2513,20 @@
       document
         .querySelectorAll(".service-panel")
         .forEach(function(panel){
-
           panel.classList.remove("active");
-
         });
-
 
       document
         .querySelectorAll(".service-tab")
         .forEach(function(tab){
-
           tab.classList.remove("active");
-
         });
 
-
-      const panel=document.getElementById(
-        "service-"+id
-      );
+      const panel=document.getElementById("service-"+id);
 
       if(panel){
         panel.classList.add("active");
       }
-
 
       if(button){
         button.classList.add("active");
@@ -2609,47 +2537,32 @@
 
     function toggleLegalLibrary(){
 
-      const toggle=document.getElementById(
-        "libraryToggle"
-      );
-
-      const cards=document.getElementById(
-        "libraryCards"
-      );
+      const toggle=document.getElementById("libraryToggle");
+      const cards=document.getElementById("libraryCards");
 
       const open=
         toggle.getAttribute("aria-expanded")==="true";
-
 
       toggle.setAttribute(
         "aria-expanded",
         open ? "false" : "true"
       );
 
-
       cards.setAttribute(
         "aria-hidden",
         open ? "true" : "false"
       );
-
 
       cards.classList.toggle(
         "library-open",
         !open
       );
 
-
       const icon=
-        toggle.querySelector(
-          ".library-toggle-icon"
-        );
-
+        toggle.querySelector(".library-toggle-icon");
 
       if(icon){
-
-        icon.textContent=
-          open ? "+" : "−";
-
+        icon.textContent=open ? "+" : "−";
       }
 
     }
@@ -2658,7 +2571,6 @@
     function toggleFAQ(button){
 
       const item=button.parentElement;
-
 
       document
         .querySelectorAll(".faq-item")
@@ -2676,14 +2588,12 @@
                 ".faq-question span:last-child"
               );
 
-
             if(b){
               b.setAttribute(
                 "aria-expanded",
                 "false"
               );
             }
-
 
             if(s){
               s.textContent="+";
@@ -2693,25 +2603,20 @@
 
         });
 
-
       item.classList.toggle("active");
-
 
       const active=
         item.classList.contains("active");
-
 
       button.setAttribute(
         "aria-expanded",
         active ? "true" : "false"
       );
 
-
       const sign=
         button.querySelector(
           "span:last-child"
         );
-
 
       if(sign){
         sign.textContent=
@@ -2724,37 +2629,23 @@
     function sendEnquiryToWhatsApp(){
 
       const name=
-        document
-          .getElementById("clientName")
-          .value
-          .trim();
-
+        document.getElementById("clientName").value.trim();
 
       const phone=
-        document
-          .getElementById("clientPhone")
-          .value
-          .trim();
-
+        document.getElementById("clientPhone").value.trim();
 
       const message=
-        document
-          .getElementById("clientMessage")
-          .value
-          .trim();
-
+        document.getElementById("clientMessage").value.trim();
 
       const whatsappMessage=
-        "New Client Enquiry\n\n"+
-        "Name: "+name+"\n"+
-        "Mobile: "+phone+"\n"+
-        "Legal Enquiry: "+message;
-
+        "New Client Enquiry\n\n" +
+        "Name: " + name +
+        "\nMobile: " + phone +
+        "\nLegal Enquiry: " + message;
 
       const whatsappURL=
-        "https://wa.me/917080884964?text="+
+        "https://wa.me/917080884964?text=" +
         encodeURIComponent(whatsappMessage);
-
 
       window.open(
         whatsappURL,
@@ -2766,30 +2657,23 @@
 
 
     const revealObserver=
-      new IntersectionObserver(
-        function(entries){
+      new IntersectionObserver(function(entries){
 
-          entries.forEach(function(entry){
+        entries.forEach(function(entry){
 
-            if(entry.isIntersecting){
+          if(entry.isIntersecting){
 
-              entry.target.classList.add(
-                "visible"
-              );
+            entry.target.classList.add("visible");
 
-              revealObserver.unobserve(
-                entry.target
-              );
+            revealObserver.unobserve(
+              entry.target
+            );
 
-            }
+          }
 
-          });
+        });
 
-        },
-        {
-          threshold:.10
-        }
-      );
+      },{threshold:.10});
 
 
     document
@@ -2802,9 +2686,6 @@
 
   </script>
 
-  <!-- =========================
-       SUPABASE
-  ========================= -->
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -2813,10 +2694,8 @@
     const SUPABASE_URL=
       "https://jfstjogeyvkhlhxhiaie.supabase.co";
 
-
     const SUPABASE_PUBLISHABLE_KEY=
       "sb_publishable_XAHKkigfoMkuF88wcAOmCg_BpJ20aGz";
-
 
     const supabaseClient=
       window.supabase.createClient(
@@ -2832,23 +2711,15 @@
           "home-articles-list"
         );
 
-
       try{
 
         const {data,error}=
           await supabaseClient
-
             .from("articles")
-
             .select(
               "id, title, description, created_at, published_at"
             )
-
-            .eq(
-              "status",
-              "published"
-            )
-
+            .eq("status","published")
             .order(
               "published_at",
               {
@@ -2856,49 +2727,38 @@
                 nullsFirst:false
               }
             )
-
             .limit(3);
-
 
         if(error){
           throw error;
         }
 
-
         if(!data || data.length===0){
 
           container.innerHTML=
-            '<div class="articles-loading">'+
-            'No Legal Articles are currently available.'+
+            '<div class="articles-loading">' +
+            'No Legal Articles are currently available.' +
             '</div>';
 
           return;
-
         }
 
-
         container.innerHTML="";
-
 
         data.forEach(function(article,index){
 
           const card=
-            document.createElement(
-              "article"
-            );
-
+            document.createElement("article");
 
           card.className=
-            "article-card"+
+            "article-card" +
             (index===0 ? " featured" : "");
 
 
           if(index===0){
 
             const badge=
-              document.createElement(
-                "div"
-              );
+              document.createElement("div");
 
             badge.className=
               "article-badge";
@@ -2906,17 +2766,13 @@
             badge.textContent=
               "Featured Article";
 
-            card.appendChild(
-              badge
-            );
+            card.appendChild(badge);
 
           }
 
 
           const date=
-            document.createElement(
-              "div"
-            );
+            document.createElement("div");
 
           date.className=
             "article-date";
@@ -2929,9 +2785,7 @@
 
 
           const title=
-            document.createElement(
-              "h3"
-            );
+            document.createElement("h3");
 
           title.textContent=
             article.title ||
@@ -2939,9 +2793,7 @@
 
 
           const description=
-            document.createElement(
-              "p"
-            );
+            document.createElement("p");
 
           description.textContent=
             article.description ||
@@ -2949,27 +2801,19 @@
 
 
           const link=
-            document.createElement(
-              "a"
-            );
+            document.createElement("a");
 
           link.href=
-            "article.html?id="+
-            encodeURIComponent(
-              article.id
-            );
+            "article.html?id=" +
+            encodeURIComponent(article.id);
 
           link.textContent=
             "Read Full Article →";
 
-
           link.setAttribute(
             "aria-label",
-            "Read "+
-            (
-              article.title ||
-              "Legal Article"
-            )
+            "Read " +
+            (article.title || "Legal Article")
           );
 
 
@@ -2978,11 +2822,9 @@
           card.appendChild(description);
           card.appendChild(link);
 
-
           container.appendChild(card);
 
         });
-
 
       }catch(error){
 
@@ -2991,10 +2833,9 @@
           error
         );
 
-
         container.innerHTML=
-          '<div class="articles-loading">'+
-          'Legal Articles could not be loaded at the moment.'+
+          '<div class="articles-loading">' +
+          'Legal Articles could not be loaded at the moment.' +
           '</div>';
 
       }
@@ -3008,19 +2849,12 @@
         return "";
       }
 
-
       const date=
         new Date(dateValue);
 
-
-      if(
-        isNaN(
-          date.getTime()
-        )
-      ){
+      if(isNaN(date.getTime())){
         return "";
       }
-
 
       return date.toLocaleDateString(
         "en-IN",
