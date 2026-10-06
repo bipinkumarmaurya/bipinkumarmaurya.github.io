@@ -96,6 +96,7 @@
 
     html{
       scroll-behavior:smooth;
+      scroll-padding-top:70px;
     }
 
     body{
@@ -156,8 +157,8 @@
       position:sticky;
       top:0;
       z-index:1000;
-      background:rgba(255,255,255,.97);
-      border-bottom:1px solid rgba(201,155,75,.20);
+      background:rgba(7,26,51,.96);
+      border-bottom:1px solid rgba(224,189,115,.22);
       backdrop-filter:blur(16px);
       -webkit-backdrop-filter:blur(16px);
       transition:.3s ease;
@@ -170,96 +171,136 @@
       right:0;
       bottom:-1px;
       height:1px;
-      background:linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(201,155,75,.18) 20%,
-        rgba(201,155,75,.75) 50%,
-        rgba(201,155,75,.18) 80%,
-        transparent 100%
-      );
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(224,189,115,.12) 15%,
+          rgba(224,189,115,.78) 50%,
+          rgba(224,189,115,.12) 85%,
+          transparent 100%
+        );
+
       pointer-events:none;
     }
 
     .navbar.scrolled{
-      background:rgba(255,255,255,.985);
+      background:rgba(7,26,51,.985);
+
       box-shadow:
-        0 10px 35px rgba(8,28,51,.10),
-        0 1px 0 rgba(201,155,75,.10);
+        0 10px 35px rgba(0,0,0,.20),
+        0 1px 0 rgba(224,189,115,.10);
     }
 
     .nav-inner{
       max-width:1320px;
-      min-height:86px;
+      min-height:68px;
       margin:auto;
       padding:0 5%;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:25px;
+      gap:24px;
     }
 
+    /* =========================
+       BM JUSTICE LOGO
+    ========================= */
+
     .brand{
-      width:62px;
-      height:62px;
+      width:54px;
+      height:54px;
       display:flex;
       align-items:center;
       justify-content:center;
       flex-shrink:0;
       position:relative;
       z-index:2;
+      color:var(--gold2);
     }
 
     .brand::before{
       content:"";
       position:absolute;
-      inset:-3px;
+      inset:0;
       border-radius:50%;
-      border:1px solid rgba(201,155,75,.25);
+
+      border:1px solid rgba(224,189,115,.38);
+
       box-shadow:
-        0 0 18px rgba(201,155,75,.10),
-        inset 0 0 12px rgba(201,155,75,.05);
-      pointer-events:none;
+        0 0 16px rgba(224,189,115,.10),
+        inset 0 0 12px rgba(224,189,115,.05);
+
       transition:.3s ease;
+      pointer-events:none;
     }
 
     .brand:hover::before{
-      border-color:rgba(201,155,75,.58);
+      border-color:rgba(224,189,115,.78);
+
       box-shadow:
-        0 0 22px rgba(201,155,75,.18),
-        inset 0 0 15px rgba(201,155,75,.08);
+        0 0 22px rgba(224,189,115,.20),
+        inset 0 0 15px rgba(224,189,115,.08);
     }
 
     .brand-logo{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      border-radius:50%;
+      width:50px;
+      height:50px;
       position:relative;
       z-index:1;
+      overflow:visible;
       transition:.3s ease;
     }
 
     .brand:hover .brand-logo{
-      transform:scale(1.035);
+      transform:scale(1.04);
     }
+
+    .brand-scales{
+      stroke:var(--gold2);
+      fill:none;
+      stroke-width:1.65;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+
+    .brand-bm{
+      fill:#ffffff;
+      font-family:"Playfair Display",serif;
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.6px;
+      text-anchor:middle;
+    }
+
+    .brand-divider{
+      stroke:var(--gold);
+      stroke-width:1;
+      opacity:.8;
+    }
+
+
+    /* =========================
+       NAV LINKS
+    ========================= */
 
     .nav-links{
       display:flex;
       align-items:center;
       justify-content:center;
-      gap:30px;
+      gap:28px;
       margin-left:auto;
     }
 
     .nav-links a{
       position:relative;
-      color:#26384d;
+      color:#e8eef5;
       font-size:12px;
       font-weight:600;
       letter-spacing:.15px;
       white-space:nowrap;
-      padding:31px 0 28px;
+      padding:25px 0 24px;
       transition:.25s ease;
     }
 
@@ -267,42 +308,57 @@
       content:"";
       position:absolute;
       left:50%;
-      bottom:18px;
+      bottom:14px;
       width:0;
       height:2px;
       border-radius:99px;
-      background:var(--gold);
+
+      background:var(--gold2);
+
       transform:translateX(-50%);
       transition:.25s ease;
     }
 
     .nav-links a:hover{
-      color:var(--navy);
+      color:var(--gold2);
     }
 
     .nav-links a:hover::after{
-      width:24px;
+      width:25px;
     }
 
     .nav-links a[href="#home"]{
-      color:var(--gold);
+      color:var(--gold2);
     }
 
     .nav-links a[href="#home"]::after{
-      width:24px;
+      width:25px;
+    }
+
+    /* Practice Areas arrow */
+
+    .nav-links a[href="#practice"]{
+      padding-right:2px;
     }
 
     .nav-links a[href="#practice"]::before{
       content:"";
+
       display:inline-block;
-      width:6px;
-      height:6px;
+
+      width:5px;
+      height:5px;
+
       border-right:1.5px solid currentColor;
       border-bottom:1.5px solid currentColor;
+
       transform:rotate(45deg);
+
       margin-left:7px;
       margin-bottom:3px;
+
       float:right;
+
       transition:.25s ease;
     }
 
@@ -311,28 +367,48 @@
       margin-bottom:0;
     }
 
+
+    /* =========================
+       CONSULTATION BUTTON
+    ========================= */
+
     .nav-contact{
       display:inline-flex!important;
       align-items:center;
       justify-content:center;
-      gap:9px;
-      min-height:47px;
-      padding:0 19px!important;
-      border:1px solid var(--gold);
-      border-radius:7px;
-      color:var(--navy)!important;
-      background:rgba(201,155,75,.035);
-      box-shadow:inset 0 0 0 1px rgba(255,255,255,.45);
+      gap:8px;
+
+      min-height:39px;
+
+      padding:0 17px!important;
+
+      border:1px solid var(--gold2);
+      border-radius:6px;
+
+      color:var(--gold2)!important;
+
+      background:rgba(224,189,115,.035);
+
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.035),
+        0 0 18px rgba(224,189,115,.03);
+
       transition:.25s ease!important;
     }
 
     .nav-contact::before{
       content:"";
-      width:8px;
-      height:8px;
+
+      width:7px;
+      height:7px;
+
       border-radius:50%;
-      background:var(--gold);
-      box-shadow:0 0 9px rgba(201,155,75,.45);
+
+      background:var(--gold2);
+
+      box-shadow:
+        0 0 9px rgba(224,189,115,.50);
+
       flex-shrink:0;
     }
 
@@ -343,34 +419,56 @@
     .nav-contact:hover{
       background:var(--gold);
       color:#fff!important;
+
       transform:translateY(-1px);
+
+      border-color:var(--gold);
+
       box-shadow:
-        0 8px 20px rgba(201,155,75,.18),
-        inset 0 0 0 1px rgba(255,255,255,.10);
+        0 8px 20px rgba(224,189,115,.16),
+        0 0 20px rgba(224,189,115,.10);
     }
 
     .nav-contact:hover::before{
       background:#fff;
-      box-shadow:0 0 10px rgba(255,255,255,.38);
+      box-shadow:
+        0 0 10px rgba(255,255,255,.40);
     }
+
+
+    /* =========================
+       MOBILE BUTTON
+    ========================= */
 
     .menu-btn{
       display:none;
-      border:1px solid rgba(201,155,75,.35);
-      background:#fff;
-      color:var(--navy);
-      width:44px;
-      height:44px;
-      border-radius:7px;
-      font-size:24px;
+
+      border:1px solid rgba(224,189,115,.38);
+
+      background:rgba(255,255,255,.025);
+
+      color:var(--gold2);
+
+      width:40px;
+      height:40px;
+
+      border-radius:6px;
+
+      font-size:23px;
       line-height:1;
-      box-shadow:0 5px 15px rgba(8,28,51,.06);
+
+      box-shadow:
+        0 5px 15px rgba(0,0,0,.10);
+
       transition:.25s ease;
     }
 
-    .menu-btn:hover{
-      border-color:var(--gold);
-      color:var(--gold);
+    .menu-btn:hover,
+    .menu-btn:focus{
+      border-color:var(--gold2);
+      background:rgba(224,189,115,.08);
+      color:#fff;
+      outline:none;
     }
 
 
@@ -496,10 +594,6 @@
       border:none;
       background:transparent;
 
-      /*
-        Photo ki outer boundary gradually fade hogi.
-        Isse photo hero background me smoothly blend hogi.
-      */
       -webkit-mask-image:radial-gradient(
         circle,
         #000 48%,
@@ -1498,32 +1592,52 @@
     @media(max-width:980px){
 
       .nav-inner{
-        min-height:78px;
+        min-height:64px;
       }
 
       .brand{
-        width:56px;
-        height:56px;
+        width:50px;
+        height:50px;
+      }
+
+      .brand-logo{
+        width:46px;
+        height:46px;
       }
 
       .nav-links{
-        position:absolute;
+        position:fixed;
         left:0;
         right:0;
-        top:78px;
+
+        top:64px;
 
         display:none;
+
         flex-direction:column;
         align-items:stretch;
 
-        background:rgba(255,255,255,.985);
-        border-bottom:1px solid var(--line);
-        padding:15px 5% 20px;
+        background:
+          linear-gradient(
+            180deg,
+            rgba(7,26,51,.985),
+            rgba(9,35,62,.98)
+          );
+
+        border-bottom:1px solid rgba(224,189,115,.25);
+
+        padding:12px 5% 18px;
+
         box-shadow:
-          0 15px 35px rgba(8,28,51,.10),
-          0 2px 0 rgba(201,155,75,.18);
-        backdrop-filter:blur(14px);
-        -webkit-backdrop-filter:blur(14px);
+          0 18px 40px rgba(0,0,0,.24),
+          0 1px 0 rgba(224,189,115,.10);
+
+        backdrop-filter:blur(16px);
+        -webkit-backdrop-filter:blur(16px);
+
+        max-height:calc(100vh - 64px);
+        overflow-y:auto;
+        overscroll-behavior:contain;
       }
 
       .nav-links.active{
@@ -1531,8 +1645,10 @@
       }
 
       .nav-links a{
-        padding:11px 0;
-        border-bottom:1px solid rgba(227,232,238,.70);
+        padding:12px 0;
+        border-bottom:1px solid rgba(255,255,255,.085);
+        color:#edf2f7;
+        font-size:13px;
       }
 
       .nav-links a:last-child{
@@ -1543,14 +1659,27 @@
         display:none;
       }
 
+      .nav-links a[href="#home"]{
+        color:var(--gold2);
+      }
+
+      .nav-links a[href="#practice"]{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+      }
+
       .nav-links a[href="#practice"]::before{
-        margin-left:0;
+        order:2;
+        margin-left:auto;
       }
 
       .nav-contact{
         text-align:center;
-        margin-top:8px;
-        border-bottom:1px solid var(--gold)!important;
+        margin-top:9px;
+        padding:11px 16px!important;
+        min-height:44px;
+        border-bottom:1px solid var(--gold2)!important;
       }
 
       .menu-btn{
@@ -1621,32 +1750,50 @@
 
     @media(max-width:700px){
 
+      html{
+        scroll-padding-top:60px;
+      }
+
       .topbar{
         display:none;
       }
 
       .navbar{
-        border-bottom-color:rgba(201,155,75,.22);
+        border-bottom-color:rgba(224,189,115,.24);
       }
 
       .nav-inner{
-        min-height:68px;
+        min-height:60px;
         padding:0 18px;
       }
 
       .brand{
-        width:48px;
-        height:48px;
+        width:46px;
+        height:46px;
+      }
+
+      .brand-logo{
+        width:43px;
+        height:43px;
       }
 
       .brand::before{
-        inset:-2px;
+        inset:0;
+      }
+
+      .menu-btn{
+        width:38px;
+        height:38px;
+        font-size:22px;
       }
 
       .nav-links{
-        top:68px;
+        top:60px;
+
         padding-left:18px;
         padding-right:18px;
+
+        max-height:calc(100vh - 60px);
       }
 
       .nav-links a{
@@ -1655,7 +1802,7 @@
       }
 
       .nav-contact{
-        min-height:48px;
+        min-height:45px;
       }
 
       .hero{
@@ -1875,12 +2022,66 @@
          class="brand"
          aria-label="Bipin Kumar Maurya Home">
 
-        <img
-          src="logo.png"
-          alt="Bipin Kumar Maurya Logo"
-          class="brand-logo">
+        <svg
+          class="brand-logo"
+          viewBox="0 0 64 64"
+          role="img"
+          aria-label="BM Justice Logo">
+
+          <circle
+            cx="32"
+            cy="32"
+            r="25"
+            fill="none"
+            stroke="rgba(224,189,115,.08)"
+            stroke-width="1">
+          </circle>
+
+          <!-- Justice Scales -->
+
+          <g class="brand-scales">
+
+            <path d="M32 12 L32 39"></path>
+
+            <path d="M24 17 L40 17"></path>
+
+            <path d="M32 12 L29 15"></path>
+
+            <path d="M32 12 L35 15"></path>
+
+            <path d="M22 18 L17 27"></path>
+            <path d="M42 18 L47 27"></path>
+
+            <path d="M14 27 H20"></path>
+            <path d="M44 27 H50"></path>
+
+            <path d="M14 27 C15 34 20 34 20 27"></path>
+            <path d="M44 27 C45 34 50 34 50 27"></path>
+
+            <path d="M28 39 H36"></path>
+            <path d="M26 42 H38"></path>
+
+          </g>
+
+          <line
+            class="brand-divider"
+            x1="20"
+            y1="45"
+            x2="44"
+            y2="45">
+          </line>
+
+          <text
+            class="brand-bm"
+            x="32"
+            y="56">
+            BM
+          </text>
+
+        </svg>
 
       </a>
+
 
       <button
         class="menu-btn"
@@ -1892,6 +2093,7 @@
         id="menuButton">
         ☰
       </button>
+
 
       <div class="nav-links" id="navLinks">
 
@@ -3064,7 +3266,7 @@
 
   <!-- =========================
        FLOATING CONTACT
-  ========================= -->
+    ========================= -->
 
   <div
     class="floating-contact"
@@ -3093,7 +3295,7 @@
 
   <!-- =========================
        MAIN JAVASCRIPT
-  ========================= -->
+    ========================= -->
 
   <script>
 
@@ -3101,38 +3303,168 @@
        MOBILE MENU
     ========================= */
 
+    function closeMenu(){
+
+      const nav=document.getElementById("navLinks");
+      const button=document.getElementById("menuButton");
+
+      nav.classList.remove("active");
+
+      button.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+      button.textContent="☰";
+
+    }
+
+
     function toggleMenu(){
 
       const nav=document.getElementById("navLinks");
       const button=document.getElementById("menuButton");
 
-      nav.classList.toggle("active");
+      const isOpen=
+        nav.classList.contains("active");
 
-      button.setAttribute(
-        "aria-expanded",
-        nav.classList.contains("active") ? "true" : "false"
-      );
+
+      if(isOpen){
+
+        closeMenu();
+
+      }else{
+
+        nav.classList.add("active");
+
+        button.setAttribute(
+          "aria-expanded",
+          "true"
+        );
+
+        button.textContent="×";
+
+      }
 
     }
 
 
-    document.querySelectorAll(".nav-links a").forEach(function(link){
+    /*
+      Mobile navigation fix:
+      Menu closes first, then page scrolls to the target
+      while keeping the target section below the sticky navbar.
+    */
 
-      link.addEventListener("click",function(){
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(function(link){
 
-        const nav=document.getElementById("navLinks");
-        const button=document.getElementById("menuButton");
+        link.addEventListener("click",function(event){
 
-        nav.classList.remove("active");
+          const href=
+            this.getAttribute("href");
 
-        button.setAttribute(
-          "aria-expanded",
-          "false"
-        );
+
+          if(
+            href &&
+            href.startsWith("#")
+          ){
+
+            const target=
+              document.querySelector(href);
+
+
+            if(target){
+
+              event.preventDefault();
+
+              closeMenu();
+
+
+              requestAnimationFrame(function(){
+
+                const navbar=
+                  document.getElementById("navbar");
+
+
+                const navHeight=
+                  navbar.offsetHeight;
+
+
+                const targetTop=
+                  target.getBoundingClientRect().top+
+                  window.pageYOffset-
+                  navHeight-
+                  8;
+
+
+                window.scrollTo({
+
+                  top:Math.max(0,targetTop),
+
+                  behavior:"smooth"
+
+                });
+
+              });
+
+            }
+
+          }else{
+
+            closeMenu();
+
+          }
+
+        });
 
       });
 
-    });
+
+    /* Close mobile menu when clicking outside */
+
+    document.addEventListener(
+      "click",
+      function(event){
+
+        const nav=
+          document.getElementById("navLinks");
+
+        const button=
+          document.getElementById("menuButton");
+
+        const navbar=
+          document.getElementById("navbar");
+
+
+        if(
+          window.innerWidth<=980 &&
+          nav.classList.contains("active") &&
+          !navbar.contains(event.target)
+        ){
+
+          closeMenu();
+
+        }
+
+      }
+    );
+
+
+    /* Close mobile menu on resize */
+
+    window.addEventListener(
+      "resize",
+      function(){
+
+        if(window.innerWidth>980){
+
+          closeMenu();
+
+        }
+
+      }
+    );
 
 
     /* =========================
@@ -3398,7 +3730,7 @@
 
   <!-- =========================
        SUPABASE
-  ========================= -->
+    ========================= -->
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
