@@ -436,6 +436,37 @@
     }
 
 
+    .language-toggle{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:36px;
+      padding:0 13px;
+      border:1px solid rgba(224,189,115,.65);
+      border-radius:6px;
+      background:rgba(224,189,115,.08);
+      color:var(--gold2);
+      font-size:12px;
+      font-weight:700;
+      white-space:nowrap;
+      transition:.25s ease;
+    }
+
+    .language-toggle:hover,
+    .language-toggle:focus{
+      background:var(--gold);
+      color:#fff;
+      outline:none;
+    }
+
+    @media(max-width:980px){
+      .language-toggle{
+        width:100%;
+        min-height:42px;
+        margin-top:8px;
+      }
+    }
+
     /* =========================
        MOBILE BUTTON
     ========================= */
@@ -2118,6 +2149,8 @@
            class="nav-contact">
           Free Consultation
         </a>
+
+        <button type="button" class="language-toggle" id="languageToggle" onclick="toggleLanguage()" aria-label="Switch website language">हिंदी</button>
 
       </div>
 
@@ -3975,6 +4008,223 @@
 
   </script>
 
+
+
+  <script>
+    /* English is the default language. The button switches the homepage copy to Hindi. */
+    const homeLanguageText = {
+      '.nav-links a[href="#home"]': 'होम',
+      '.nav-links a[href="#about"]': 'परिचय',
+      '.nav-links a[href="#practice"]': 'कार्य क्षेत्र',
+      '.nav-links a[href="#articles"]': 'कानूनी लेख',
+      '.nav-links a[href="#bare-acts"]': 'कानूनी संसाधन',
+      '.nav-links a[href="#faq"]': 'अक्सर पूछे जाने वाले प्रश्न',
+      '.nav-contact': 'निःशुल्क परामर्श',
+      '.hero .eyebrow': 'कानूनी जानकारी और परामर्श',
+      '.hero-subtitle': 'गोरखपुर में आपराधिक, दीवानी, पारिवारिक, संपत्ति, उपभोक्ता और श्रम मामलों पर स्पष्ट एवं व्यावहारिक कानूनी जानकारी।',
+      '.hero-location': 'गोरखपुर · उत्तर प्रदेश · भारत',
+      '.hero-actions .btn-primary': 'निःशुल्क परामर्श',
+      '.hero-actions .btn-light': 'कानूनी सेवाएँ देखें',
+      '.hero-note': 'व्यावहारिक मार्गदर्शन · कानूनी जागरूकता · स्पष्ट जानकारी',
+      '#about .eyebrow': 'परिचय',
+      '.about-lead': 'कानून को समझने का व्यावहारिक तरीका।',
+      '.about-copy p:nth-of-type(1)': 'मैं, बिपिन कुमार मौर्य, गोरखपुर जिले में कानूनी मामलों से संबंधित जानकारी, परामर्श और सहायता प्रदान करता हूँ।',
+      '.about-copy p:nth-of-type(2)': 'मेरा उद्देश्य लोगों को उनके कानूनी अधिकारों, कर्तव्यों और उपलब्ध उपायों को सरल एवं व्यावहारिक तरीके से समझने में मदद करना है।',
+      '.about-point:nth-child(1) strong': 'स्पष्ट जानकारी',
+      '.about-point:nth-child(1) span': 'कानूनी अवधारणाओं को सरल और उपयोगी तरीके से समझाया जाता है।',
+      '.about-point:nth-child(2) strong': 'व्यावहारिक दृष्टिकोण',
+      '.about-point:nth-child(2) span': 'तथ्यों और लागू कानून को समझने पर ध्यान।',
+      '.about-point:nth-child(3) strong': 'कानूनी जागरूकता',
+      '.about-point:nth-child(3) span': 'सामान्य कानूनी जागरूकता के लिए लेख और संसाधन।',
+      '.about-point:nth-child(4) strong': 'गोपनीय पूछताछ',
+      '.about-point:nth-child(4) span': 'परामर्श फॉर्म के माध्यम से प्रारंभिक पूछताछ भेजी जा सकती है।',
+      '.consult-copy .eyebrow': 'कानूनी परामर्श',
+      '.consult-copy h2': 'समीक्षा करें। समझें। अगला कदम उठाएँ।',
+      '.consult-copy > p': 'अपने कानूनी प्रश्न के बुनियादी तथ्य साझा करें और आगे चर्चा के लिए संपर्क करें।',
+      '.consult-list div:nth-child(1)': '✓  मामले से संबंधित प्रारंभिक पूछताछ',
+      '.consult-list div:nth-child(2)': '✓  कानूनी जानकारी की स्पष्ट व्याख्या',
+      '.consult-list div:nth-child(3)': '✓  फोन, ईमेल या WhatsApp से ऑनलाइन संपर्क',
+      '.consult-list div:nth-child(4)': '✓  तथ्यों और लागू कानून पर आधारित जानकारी',
+      '.consult-card > .eyebrow': 'संपर्क करें',
+      '.consult-card h3': 'निःशुल्क परामर्श',
+      '.consult-card > p': 'अपना प्रारंभिक कानूनी प्रश्न साझा करें और आगे चर्चा के लिए संपर्क करें।',
+      '.consult-card .contact-mini div:nth-child(1) strong': 'फोन',
+      '.consult-card .contact-mini div:nth-child(2) strong': 'ईमेल',
+      '.consult-card .contact-mini div:nth-child(3) strong': 'स्थान',
+      '.consult-card .contact-mini div:nth-child(3)': 'स्थान: गोरखपुर, उत्तर प्रदेश',
+      '.consult-card > a.btn': 'कानूनी प्रश्न भेजें →',
+      '#practice .section-head .eyebrow': 'कार्य के क्षेत्र',
+      '#practice .section-head h2': 'कानूनी सेवाएँ देखें।',
+      '#practice .section-head p': 'कानून के छह प्रमुख क्षेत्रों में केंद्रित जानकारी और मार्गदर्शन।',
+      '.service-tabs button:nth-child(1)': 'आपराधिक',
+      '.service-tabs button:nth-child(2)': 'दीवानी',
+      '.service-tabs button:nth-child(3)': 'पारिवारिक',
+      '.service-tabs button:nth-child(4)': 'संपत्ति',
+      '.service-tabs button:nth-child(5)': 'उपभोक्ता',
+      '.service-tabs button:nth-child(6)': 'श्रम',
+      '#service-criminal h3': 'आपराधिक कानून',
+      '#service-criminal > p': 'तथ्यों और लागू कानून के अधीन आपराधिक मामलों से संबंधित जानकारी और मार्गदर्शन।',
+      '#service-criminal .service-list div:nth-child(1)': 'जमानत संबंधी मामले',
+      '#service-criminal .service-list div:nth-child(2)': 'FIR संबंधी मार्गदर्शन',
+      '#service-criminal .service-list div:nth-child(3)': 'जाँच प्रक्रिया',
+      '#service-criminal .service-list div:nth-child(4)': 'मुकदमे से संबंधित जानकारी',
+      '#service-criminal .service-list div:nth-child(5)': 'आपराधिक प्रक्रिया',
+      '#service-criminal .service-list div:nth-child(6)': 'उपलब्ध कानूनी उपाय',
+      '#service-civil h3': 'दीवानी कानून',
+      '#service-civil > p': 'दीवानी विवादों और प्रक्रियात्मक उपायों से संबंधित जानकारी।',
+      '#service-civil .service-list div:nth-child(1)': 'दीवानी विवाद',
+      '#service-civil .service-list div:nth-child(2)': 'धन वसूली',
+      '#service-civil .service-list div:nth-child(3)': 'निषेधाज्ञा',
+      '#service-civil .service-list div:nth-child(4)': 'विशिष्ट पालन',
+      '#service-civil .service-list div:nth-child(5)': 'दीवानी प्रक्रिया',
+      '#service-civil .service-list div:nth-child(6)': 'संबंधित कानूनी उपाय',
+      '#service-family h3': 'पारिवारिक कानून',
+      '#service-family > p': 'परिवार और वैवाहिक कानूनी मामलों से संबंधित सामान्य जानकारी।',
+      '#service-family .service-list div:nth-child(1)': 'वैवाहिक मामले',
+      '#service-family .service-list div:nth-child(2)': 'तलाक',
+      '#service-family .service-list div:nth-child(3)': 'भरण-पोषण',
+      '#service-family .service-list div:nth-child(4)': 'बच्चे की अभिरक्षा',
+      '#service-family .service-list div:nth-child(5)': 'पारिवारिक विवाद',
+      '#service-family .service-list div:nth-child(6)': 'संबंधित कानूनी मुद्दे',
+      '#service-property h3': 'संपत्ति कानून',
+      '#service-property > p': 'संपत्ति, भूमि और स्वामित्व से संबंधित सामान्य जानकारी।',
+      '#service-property .service-list div:nth-child(1)': 'संपत्ति विवाद',
+      '#service-property .service-list div:nth-child(2)': 'भूमि संबंधी मामले',
+      '#service-property .service-list div:nth-child(3)': 'स्वामित्व के दावे',
+      '#service-property .service-list div:nth-child(4)': 'बँटवारा',
+      '#service-property .service-list div:nth-child(5)': 'स्वामित्व दस्तावेज संबंधी मामले',
+      '#service-property .service-list div:nth-child(6)': 'संपत्ति के दस्तावेज',
+      '#service-consumer h3': 'उपभोक्ता कानून',
+      '#service-consumer > p': 'लागू कानून के अंतर्गत उपभोक्ता शिकायतों और उपायों से संबंधित जानकारी।',
+      '#service-consumer .service-list div:nth-child(1)': 'उपभोक्ता शिकायतें',
+      '#service-consumer .service-list div:nth-child(2)': 'दोषपूर्ण वस्तुएँ',
+      '#service-consumer .service-list div:nth-child(3)': 'सेवा में कमी',
+      '#service-consumer .service-list div:nth-child(4)': 'धन-वापसी के दावे',
+      '#service-consumer .service-list div:nth-child(5)': 'उपभोक्ता आयोग',
+      '#service-consumer .service-list div:nth-child(6)': 'संबंधित कानूनी मार्गदर्शन',
+      '#service-labour h3': 'श्रम कानून',
+      '#service-labour > p': 'रोजगार और कार्यस्थल से जुड़े कानूनी मुद्दों की सामान्य जानकारी।',
+      '#service-labour .service-list div:nth-child(1)': 'रोजगार संबंधी मुद्दे',
+      '#service-labour .service-list div:nth-child(2)': 'कार्यस्थल पर अधिकार',
+      '#service-labour .service-list div:nth-child(3)': 'सेवा समाप्ति',
+      '#service-labour .service-list div:nth-child(4)': 'वेतन',
+      '#service-labour .service-list div:nth-child(5)': 'श्रम विवाद',
+      '#service-labour .service-list div:nth-child(6)': 'रोजगार संबंधी मार्गदर्शन',
+      '.cta .eyebrow': 'कानूनी मार्गदर्शन चाहिए?',
+      '.cta h2': 'आपका कानूनी मामला स्पष्टता का हकदार है।',
+      '.cta p': 'प्रारंभिक प्रश्न साझा करें और आगे चर्चा के लिए संपर्क करें।',
+      '.cta-actions .btn-primary': 'निःशुल्क परामर्श',
+      '.cta-actions .btn-light': 'WhatsApp',
+      '#articles .section-head .eyebrow': 'कानूनी लेख',
+      '#articles .section-head h2': 'कानून को सरल शब्दों में समझें।',
+      '#articles .section-head p': 'कानून, कानूनी जागरूकता और भारतीय कानून से जुड़े महत्वपूर्ण विषयों पर उपयोगी लेख।',
+      '.articles-loading': 'कानूनी लेख लोड हो रहे हैं...',
+      '.all-articles .btn': 'सभी कानूनी लेख देखें →',
+      '#bare-acts .section-head .eyebrow': 'कानूनी पुस्तकालय',
+      '#bare-acts .section-head h2': 'कानूनी संसाधन',
+      '#bare-acts .section-head p': 'भारतीय कानून से संबंधित Bare Acts और महत्वपूर्ण कानूनी संसाधन, सामान्य जानकारी और जागरूकता के लिए।',
+      '.library-toggle small': 'पुस्तकालय देखें',
+      '.library-toggle strong': 'कानूनी संसाधन देखें',
+      '.library-toggle p': 'आपराधिक, संवैधानिक, वाणिज्यिक और विविध कानूनी संसाधन।',
+      '.bare-card:nth-child(1) h3': 'आपराधिक कानून',
+      '.bare-card:nth-child(1) p': 'आपराधिक कानून से संबंधित प्रकाशित Bare Acts।',
+      '.bare-card:nth-child(2) h3': 'संविधान और संवैधानिक कानून',
+      '.bare-card:nth-child(2) p': 'संविधान और संवैधानिक कानून से संबंधित संसाधन।',
+      '.bare-card:nth-child(3) h3': 'वाणिज्य और कॉर्पोरेट कानून',
+      '.bare-card:nth-child(3) p': 'वाणिज्यिक और कॉर्पोरेट कानून से संबंधित संसाधन।',
+      '.bare-card:nth-child(4) h3': 'विविध कानून',
+      '.bare-card:nth-child(4) p': 'अन्य महत्वपूर्ण कानूनी क्षेत्रों से संबंधित संसाधन।',
+      '#faq .section-head .eyebrow': 'अक्सर पूछे जाने वाले प्रश्न',
+      '#faq .section-head h2': 'अक्सर पूछे जाने वाले प्रश्न',
+      '#faq .section-head p': 'कानूनी जानकारी, परामर्श और पूछताछ से जुड़े सामान्य प्रश्न।',
+      '.faq-item:nth-child(1) .faq-question span:first-child': 'किन कानूनी मामलों में सहायता मिल सकती है?',
+      '.faq-item:nth-child(1) .faq-answer p': 'तथ्यों और प्रत्येक मामले की परिस्थितियों के अधीन आपराधिक, दीवानी, पारिवारिक, संपत्ति, उपभोक्ता और श्रम कानून से संबंधित सहायता मिल सकती है।',
+      '.faq-item:nth-child(2) .faq-question span:first-child': 'आपसे संपर्क कैसे कर सकते हैं?',
+      '.faq-item:nth-child(2) .faq-answer p': 'आप इस वेबसाइट पर उपलब्ध फोन, WhatsApp या ईमेल विकल्पों का उपयोग कर सकते हैं।',
+      '.faq-item:nth-child(3) .faq-question span:first-child': 'क्या ऑनलाइन कानूनी पूछताछ भेज सकते हैं?',
+      '.faq-item:nth-child(3) .faq-answer p': 'हाँ। आप नीचे दिए गए पूछताछ फॉर्म से अपना प्रारंभिक प्रश्न WhatsApp के माध्यम से भेज सकते हैं।',
+      '.faq-item:nth-child(4) .faq-question span:first-child': 'क्या इस वेबसाइट की जानकारी कानूनी सलाह है?',
+      '.faq-item:nth-child(4) .faq-answer p': 'नहीं। इस वेबसाइट की जानकारी केवल सामान्य कानूनी जानकारी और जागरूकता के उद्देश्य से है।',
+      '.faq-item:nth-child(5) .faq-question span:first-child': 'क्या हर कानूनी मामले का समाधान एक जैसा होता है?',
+      '.faq-item:nth-child(5) .faq-answer p': 'नहीं। प्रत्येक कानूनी मामला अपने विशिष्ट तथ्यों, परिस्थितियों और लागू कानून पर निर्भर करता है।',
+      '#contact .enquiry-intro .eyebrow': 'संपर्क करें',
+      '#contact .enquiry-intro h2': 'निःशुल्क परामर्श',
+      '#contact .enquiry-intro > p': 'अपना प्रारंभिक कानूनी प्रश्न साझा करें और आगे चर्चा के लिए संपर्क करें।',
+      '#contact .enquiry-intro .contact-mini div:nth-child(1) strong': 'फोन',
+      '#contact .enquiry-intro .contact-mini div:nth-child(2) strong': 'ईमेल',
+      '#contact .enquiry-intro .contact-mini div:nth-child(3) strong': 'स्थान',
+      '#clientName': 'आपका नाम',
+      '#clientPhone': 'मोबाइल नंबर',
+      '#clientMessage': 'अपनी कानूनी पूछताछ संक्षेप में लिखें...',
+      '.enquiry-form button': 'WhatsApp पर पूछताछ भेजें →',
+      '.disclaimer h2': 'कानूनी अस्वीकरण',
+      '.disclaimer p:nth-of-type(1)': 'इस वेबसाइट पर उपलब्ध जानकारी केवल सामान्य कानूनी जानकारी और जागरूकता के उद्देश्य से दी गई है। यह किसी विशेष मामले में कानूनी राय, सलाह या पेशेवर परामर्श का विकल्प नहीं है।',
+      '.disclaimer p:nth-of-type(2)': 'हर कानूनी मामला अपने तथ्यों और परिस्थितियों के आधार पर अलग होता है। कोई भी कानूनी कदम उठाने से पहले उचित कानूनी परामर्श प्राप्त करना चाहिए।',
+      '.footer-text': 'विभिन्न कानूनी क्षेत्रों से संबंधित कानूनी जानकारी, जागरूकता संसाधन और सहायता।',
+      '.footer-links a[href="#home"]': 'होम',
+      '.footer-links a[href="#about"]': 'परिचय',
+      '.footer-links a[href="#practice"]': 'कार्य क्षेत्र',
+      '.footer-links a[href="articles.html"]': 'कानूनी लेख',
+      '.footer-links a[href="#bare-acts"]': 'कानूनी संसाधन',
+      '.footer-links a[href="#faq"]': 'अक्सर पूछे जाने वाले प्रश्न',
+      '.footer-links a[href="#contact"]': 'निःशुल्क परामर्श',
+      '.footer-links a[href="admin.html"]': 'एडमिन लॉगिन',
+      '.footer-links a[href="privacy-policy.html"]': 'गोपनीयता नीति'
+    };
+
+    const originalLanguageText = new Map();
+    let currentHomeLanguage = 'en';
+
+    function setHomeLanguage(language) {
+      const hindi = language === 'hi';
+      document.documentElement.lang = hindi ? 'hi-IN' : 'en-IN';
+
+      Object.entries(homeLanguageText).forEach(([selector, hindiText]) => {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach((element, index) => {
+          const key = selector + '::' + index;
+          if (!originalLanguageText.has(key)) {
+            originalLanguageText.set(key, {
+              element,
+              text: element.textContent,
+              placeholder: element.getAttribute('placeholder'),
+              ariaLabel: element.getAttribute('aria-label')
+            });
+          }
+          const original = originalLanguageText.get(key);
+          if (selector.startsWith('#client')) {
+            element.placeholder = hindi ? hindiText : original.placeholder;
+            element.setAttribute('aria-label', hindi ? hindiText : (original.ariaLabel || ''));
+          } else if (selector.includes('.contact-mini div:nth-child(3)') && selector.endsWith('div:nth-child(3)')) {
+            if (hindi) {
+              const link = element.querySelector('a');
+              if (link) {
+                const strong = element.querySelector('strong');
+                if (strong) strong.textContent = 'स्थान';
+              } else {
+                element.textContent = hindiText;
+              }
+            } else {
+              element.textContent = original.text;
+            }
+          } else {
+            element.textContent = hindi ? hindiText : original.text;
+          }
+        });
+      });
+
+      const toggle = document.getElementById('languageToggle');
+      if (toggle) {
+        toggle.textContent = hindi ? 'English' : 'हिंदी';
+        toggle.setAttribute('aria-label', hindi ? 'Switch website language to English' : 'Switch website language to Hindi');
+      }
+      currentHomeLanguage = language;
+    }
+
+    function toggleLanguage() {
+      setHomeLanguage(currentHomeLanguage === 'en' ? 'hi' : 'en');
+    }
+  </script>
 
 </body>
 </html>
